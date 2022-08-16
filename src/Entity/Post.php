@@ -20,6 +20,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $id;
 
@@ -28,6 +29,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $title;
 
@@ -36,6 +38,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $image;
 
@@ -43,6 +46,7 @@ class Post
      * @ORM\Column(type="text")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_category_post"})
      */
     private $content;
 
@@ -90,6 +94,7 @@ class Post
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="posts")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"api_post_read"})
+     * @Groups({"api_category_post"})
      */
     private $city;
 

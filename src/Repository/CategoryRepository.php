@@ -30,6 +30,24 @@ class CategoryRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByCategory($cityId, $categoryId): array
+    {
+         $entityManager = $this->getEntityManager();
+ 
+         $query = $entityManager->createQuery(
+             'SELECT p
+             FROM App\Entity\Post p
+             JOIN p.city c
+             JOIN p.category cat
+             WHERE c.id = :cityId AND
+             cat.id = :categoryId
+             '
+         )->setParameter('cityId', $cityId)
+          ->setParameter('categoryId', $categoryId);
+ 
+         return $query->getResult();
+    }
+
     public function remove(Category $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
