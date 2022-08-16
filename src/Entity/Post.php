@@ -25,7 +25,7 @@ class Post
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=128, nullable=true)
+     * @ORM\Column(type="string", length=2048, nullable=true)
      */
     private $image;
 
@@ -45,7 +45,7 @@ class Post
     private $address;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", options={"default" : 1} )
      */
     private $status;
 
