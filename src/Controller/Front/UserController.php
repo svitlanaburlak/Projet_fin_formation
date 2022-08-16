@@ -2,51 +2,44 @@
 
 namespace App\Controller\Front;
 
-use App\Entity\Post;
-use App\Repository\PostRepository;
+use App\Entity\User;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
     /**
-     * @Route("/api", name="api_post_")
+     * @Route("/api", name="api_user_")
      */
 
-class PostController extends AbstractController
+class UserController extends AbstractController
 {
-     /**
-     * @Route("/posts/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
-     */
-
-    public function read(PostRepository $postRepo, int $id): Response
-    {
-        $post = $postRepo->find($id);
-        return $this->json($post, 200, [], ['groups' => 'api_post_read']);
-    }
 
      /**
-     * @Route("/posts", name="create", methods={"POST"})
+     * @Route("/users", name="create", methods={"POST"})
      */
 
-     //Todo test with Thunder client 
-    public function create(
+     public function create(
         EntityManagerInterface $em, 
         Request $request, 
         SerializerInterface $serializer,
-        ValidatorInterface $validator
+        ValidatorInterface $validator,
+        UserPasswordHasherInterface $passwordHasher,
+        UserRepository $userRepository
         )
     {
 
         $data = $request->getContent();
 
-        $post = $serializer->deserialize($data, Post::class, 'json');
+        $user = $serializer->deserialize($data, User::class, 'json');
 
-        $errors = $validator->validate($post);
+        $errors = $validator->validate($user);
 
     
         if (count($errors) > 0) {
@@ -56,32 +49,47 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-        $em->persist($post);
-        $em->flush();
+            $passwordClear = $user->getPassword();
+            $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
+            $user->setPassword($hashedPassword);
+      
+
+            $em->persist($user);
+            $em->flush();
 
         return $this->json('OK', Response::HTTP_CREATED);
     }
 
     /**
-     * @Route("/posts/{id<\d+>}", name="update", methods="PATCH", requirements={"id"="\d+"})
+     * @Route("/users/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
+     */
+
+    public function read(UserRepository $userRepo, int $id): Response
+    {
+        $user = $userRepo->find($id);
+        return $this->json($user, 200, [], ['groups' => 'api_user_read']);
+    }
+
+     /**
+     * @Route("/users/{id<\d+>}", name="update", methods="PATCH", requirements={"id"="\d+"})
      * @return Response
      */
     public function update(
         $id,
         EntityManagerInterface $em, 
-        PostRepository $postRepository,
+        UserRepository $userRepository,
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator
         )
     {
-        $post = $postRepository->find($id);
+        $user = $userRepository->find($id);
 
-        if ($post === null )
+        if ($user === null )
         {
             $errors = [ 
                 'error' => true,
-                'message' => 'No post found for id [' . $id . ']'
+                'message' => 'No user found for id [' . $id . ']'
             ];
             $errorsString = (string) $errors;
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
@@ -89,9 +97,9 @@ class PostController extends AbstractController
 
         $data = $request->getContent();
 
-        $post = $serializer->deserialize($data, Post::class, 'json', [AbstractNormalizer::OBJECT_TO_POPULATE => $post]);
+        $user = $serializer->deserialize($data, User::class, 'json', [AbstractNormalizer::OBJECT_TO_POPULATE => $user]);
 
-        $errors = $validator->validate($post);
+        $errors = $validator->validate($user);
 
         if (count($errors) > 0) {
 
@@ -104,4 +112,5 @@ class PostController extends AbstractController
 
         return $this->json('OK', Response::HTTP_OK);
     }
+
 }

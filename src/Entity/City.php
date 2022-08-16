@@ -20,6 +20,7 @@ class City
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $id;
 
@@ -28,6 +29,7 @@ class City
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $name;
 

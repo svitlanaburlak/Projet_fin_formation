@@ -19,6 +19,7 @@ class Post
      * @ORM\Column(type="integer")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $id;
 
@@ -26,6 +27,7 @@ class Post
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $title;
 
@@ -33,6 +35,7 @@ class Post
      * @ORM\Column(type="string", length=2048, nullable=true)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $image;
 
