@@ -19,11 +19,13 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = \Faker\Factory::create();
+        // to get always the same generated data
+        $faker->seed(42);
         $nbUser = 15;
 
         $adminUser = new User();
         $adminUser->setEmail('admin@tribu.fr');
-        $adminUser->setFirstname('admin');
+        $adminUser->setFirstname('Admin');
         $adminUser->setLastname('Tribu');
         $adminUser->setPresentation('Admin presentation');
         $adminUser->setRoles(['ROLE_ADMIN']);
@@ -35,13 +37,15 @@ class UserFixtures extends Fixture
 
         $stdUser = new User();
         $stdUser->setEmail('user@tribu.fr');
-        $adminUser->setFirstname('user');
-        $adminUser->setLastname('Tribu');
-        $adminUser->setPresentation('User presentation');
+        $stdUser->setFirstname('User');
+        $stdUser->setLastname('Tribu');
+        $stdUser->setPresentation('User presentation');
         $stdUser->setRoles(['ROLE_USER']);
 
         $hashedPassword = $this->passwordHasher->hashPassword($stdUser, 'tribu');
         $stdUser->setPassword($hashedPassword);
+
+        $this->addReference($stdUser->getEmail(), $stdUser);
 
         $manager->persist($stdUser);
 
@@ -55,7 +59,11 @@ class UserFixtures extends Fixture
             $hashedPassword = $this->passwordHasher->hashPassword($userObj, 'tribu');
             $userObj->setPassword($hashedPassword);
 
-            //todo 
+            $manager->persist($userObj);
+
+            $this->addReference($userObj->getEmail(), $userObj);
+
+            // todo 
             // $userObj->setCity();
         }
 
