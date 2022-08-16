@@ -74,7 +74,7 @@ class Post
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="post")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $userPerson;
+    private $user;
 
     public function __construct()
     {
@@ -218,14 +218,14 @@ class Post
         return $this;
     }
 
-    public function getUserPerson(): ?User
+    public function getUser(): ?User
     {
-        return $this->userPerson;
+        return $this->user;
     }
 
-    public function setUserPerson(?User $userPerson): self
+    public function setUser(?User $user): self
     {
-        $this->userPerson = $userPerson;
+        $this->user = $user;
 
         return $this;
     }
