@@ -58,7 +58,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="userPerson")
+     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user")
      */
     private $post;
 
@@ -221,7 +221,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->post->contains($post)) {
             $this->post[] = $post;
-            $post->setUserPerson($this);
+            $post->setUser($this);
         }
 
         return $this;
@@ -231,8 +231,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->post->removeElement($post)) {
             // set the owning side to null (unless already changed)
-            if ($post->getUserPerson() === $this) {
-                $post->setUserPerson(null);
+            if ($post->getUser() === $this) {
+                $post->setUser(null);
             }
         }
 
