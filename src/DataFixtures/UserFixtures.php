@@ -56,7 +56,7 @@ class UserFixtures extends Fixture
             $userObj->setPassword($hashedPassword);
 
             //todo 
-            $userObj->setCity();
+            // $userObj->setCity();
         }
 
         $manager->flush();

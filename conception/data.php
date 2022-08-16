@@ -608,6 +608,7 @@ $posts = [
         "city" => "Los Angeles",
         "categories" => [
             "Evénements",
+            "Sorties",
         ],
     ],
     [
@@ -634,6 +635,7 @@ $posts = [
         "city" => "Rome",
         "categories" => [
             "Culture",
+            "Sorties",
         ],
     ],
     [
@@ -699,6 +701,7 @@ $posts = [
         "city" => "Rome",
         "categories" => [
             "Sorties",
+            "Evénements",
         ],
     ],
     [
