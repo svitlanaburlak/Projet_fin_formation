@@ -25,7 +25,7 @@ class City
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=128)
+     * @ORM\Column(type="string", length=2048)
      */
     private $image;
 
