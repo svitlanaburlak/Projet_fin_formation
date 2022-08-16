@@ -30,6 +30,21 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByCity($cityId): array
+    {
+         $entityManager = $this->getEntityManager();
+ 
+         $query = $entityManager->createQuery(
+             'SELECT p
+             FROM App\Entity\Post p
+             JOIN p.city c
+             WHERE c.id = :cityId
+             '
+         )->setParameter('cityId', $cityId);
+ 
+         return $query->getResult();
+    }
+
     public function remove(Post $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);

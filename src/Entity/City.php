@@ -6,6 +6,7 @@ use App\Repository\CityRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=CityRepository::class)
@@ -16,41 +17,57 @@ class City
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=2048)
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
      */
     private $country;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
      */
     private $slug;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"api_city_list"})
+     * @Groups({"api_city_read"})
      */
     private $description;
 
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="city", orphanRemoval=true)
+     * @Groups({"api_city_read"})
      */
     private $posts;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="city")
+     * @Groups({"api_city_read"})
      */
     private $users;
 
@@ -58,6 +75,11 @@ class City
     {
         $this->posts = new ArrayCollection();
         $this->users = new ArrayCollection();
+    }
+
+    public function __toString() 
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
