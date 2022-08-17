@@ -3,6 +3,7 @@
 namespace App\Controller\Back;
 
 use App\Entity\Post;
+use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,6 +34,7 @@ class PostController extends AbstractController
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
+        var_dump($form);
         if ($form->isSubmitted() && $form->isValid()) {
 
             $postRepo->add($post, true);
@@ -42,7 +44,7 @@ class PostController extends AbstractController
         }
 
         return $this->renderForm('back/post/create.html.twig', [
-            'movie' => $post,
+            'post' => $post,
             'form' => $form,
         ]);
     }
@@ -80,7 +82,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/delete", name="delete", requirements={"id"="\d+"}, methods={"POST"})
+     * @Route("/posts{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Post $post, PostRepository $postRepo): Response
     {
@@ -88,7 +90,7 @@ class PostController extends AbstractController
             $postRepo->remove($post, true);
         }
 
-        $this->addFlash('danger', 'movie deleted');
+        $this->addFlash('danger', 'Point d\'interet supprimé');
         return $this->redirectToRoute('admin_post_list', [], Response::HTTP_SEE_OTHER);
     }
 

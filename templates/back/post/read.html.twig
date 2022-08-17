@@ -44,6 +44,11 @@
                 <th>Utilisateur</th>
                 <td>{{ post.user.email }}</td>
             </tr>
+            {# <td>
+                    {% for categories in post.categories %}
+                       <a href="{{ path('back_genre_show', {'id': genre.id}) }}"><span class="btn btn-info">{{ genre.name }}</span></a>
+                    {% endfor %}
+            </td> #}
             <tr>
                 <th>Date de creation</th>
                 <td>{{ post.createdAt|date('Y-m-d') }}</td>
