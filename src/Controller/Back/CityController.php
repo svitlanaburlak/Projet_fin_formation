@@ -57,4 +57,24 @@ class CityController extends AbstractController
             'city' => $city,
         ]);
     }
+
+    /**
+     * @Route ("/{id}/update", name="update", methods={"GET", "POST"})
+     */
+    public function update(Request $request, City $city, CityRepository $cityRepo): Response
+    {
+        $form = $this->createForm(CityType::class, $city);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $cityRepo->add($city, true);
+
+            return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('back/city/update.html.twig', [
+            'city' => $city,
+            'form' => $form,
+        ]);
+    }
 }

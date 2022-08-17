@@ -39,7 +39,7 @@
                 <td>
                     {# todo add Read & Update in CityController #}
                     <a class="btn btn-primary" href="{{ path('app_back_city_read', {'id': city.id}) }}">Voir</a>
-                    <a class="btn btn-secondary" href="#">Modifier</a>
+                    <a class="btn btn-secondary" href="{{ path('app_back_city_update', {'id': city.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
