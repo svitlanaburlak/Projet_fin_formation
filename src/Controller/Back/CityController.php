@@ -18,18 +18,18 @@ class CityController extends AbstractController
     /**
      * @Route("/", name="list", methods={"GET"})
      */
-    public function list(CityRepository $cityRepo): Response
+    public function list(CityRepository $cityRepository): Response
     {
         return $this->render('back/city/list.html.twig', [
             'controller_name' => 'CityController',
-            'cities' => $cityRepo->findAll(),
+            'cities' => $cityRepository->findAll(),
         ]);
     }
 
     /**
      * @Route("/create", name="create", methods={"GET", "POST"})
      */
-    public function create(Request $request, CityRepository $cityRepo): Response
+    public function create(Request $request, CityRepository $cityRepository): Response
     {
         $city = new City();
 
@@ -37,7 +37,7 @@ class CityController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cityRepo->add($city, true);
+            $cityRepository->add($city, true);
 
             return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
         }
@@ -61,13 +61,13 @@ class CityController extends AbstractController
     /**
      * @Route ("/{id}/update", name="update", methods={"GET", "POST"})
      */
-    public function update(Request $request, City $city, CityRepository $cityRepo): Response
+    public function update(Request $request, City $city, CityRepository $cityRepository): Response
     {
         $form = $this->createForm(CityType::class, $city);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cityRepo->add($city, true);
+            $cityRepository->add($city, true);
 
             return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
         }
@@ -76,5 +76,17 @@ class CityController extends AbstractController
             'city' => $city,
             'form' => $form,
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="delete", methods={"POST"})
+     */
+    public function delete(Request $request, City $city, CityRepository $cityRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$city->getId(), $request->request->get('_token'))) {
+            $cityRepository->remove($city, true);
+        }
+
+        return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
     }
 }
