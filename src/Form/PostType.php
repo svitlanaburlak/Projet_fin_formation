@@ -11,6 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class PostType extends AbstractType
 {
@@ -27,7 +28,13 @@ class PostType extends AbstractType
                 'html5' => true,
                 ])
             ->add('address')
-            ->add('status')
+            ->add('status', ChoiceType::class, [
+                'choices'  => [
+                    'Active' => 1,
+                    'Inactif' => 0],
+                    'expanded' => true,
+                'multiple' => false,
+                ])
             ->add('updatedAt', DateType::class,
                 [ 'label' => 'Date de modification',
                 'widget' => 'single_text',

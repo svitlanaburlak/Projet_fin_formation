@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Point d'interet{% endblock %}
+{% block title %}Point d'intérêt{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1>Point d'interet</h1>
+    <h1>Point d'intérêt</h1>
 
     <table class="table">
         <tbody>
@@ -34,27 +34,36 @@
             </tr>
             <tr>
                 <th>Satus</th>
-                <td>{{ post.status }}</td>
+                <td>
+                    {% if post.status is same as 1 %}
+                        actif
+                    {% else %}
+                        inactif
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>Ville</th>
-                <td>{{ post.city.name }}</td>
+                <td><a href=""><span class="btn btn-warning">{{ post.city.name }}</span></a></td>
             </tr>
             <tr>
                 <th>Utilisateur</th>
                 <td>{{ post.user.email }}</td>
             </tr>
-            {# <td>
-                    {% for categories in post.categories %}
-                       <a href="{{ path('back_genre_show', {'id': genre.id}) }}"><span class="btn btn-info">{{ genre.name }}</span></a>
+            <tr>
+                <th>Categories</th>
+                <td>
+                    {% for category in post.category %}
+                        <a href=""><span class="btn btn-info">{{ category.name }}</span></a>
                     {% endfor %}
-            </td> #}
+                </td>
+            </tr>
             <tr>
                 <th>Date de creation</th>
                 <td>{{ post.createdAt|date('Y-m-d') }}</td>
             </tr>
             <tr>
-                <th>Date d'edition</th>
+                <th>Date de modification</th>
                 <td>{{ post.updatedAt|date('Y-m-d') }}</td>
             </tr>
         </tbody>

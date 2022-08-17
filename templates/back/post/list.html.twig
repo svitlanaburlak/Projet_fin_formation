@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="d-flex justify-content-evenly">
-        <h1>Posts</h1>
+        <h1>Points d'intérêt</h1>
         <div class="d-flex align-items-center">        
             <a href="{{ path('admin_post_create') }}" class="btn btn-sm btn-success px-5"><i class="bi bi-plus-circle"></i></a>
         </div>
@@ -40,7 +40,11 @@
                 <td><img src="{{ post.image }}" width="50px"></td>
                 <td>{{ post.address }}</td>
                 <td>{{ post.city.name }}</td>
-                <td>{{ post.status }}</td>
+                <td>{% if post.status is same as 1 %}
+                        actif
+                    {% else %}
+                        inactif
+                    {% endif %}</td>
                 <td>{{ post.createdAt|date('Y-m-d')}}</td>
                 <td>
                     <a href="{{ path('admin_post_read', {'id': post.id}) }}" class="btn btn-sm btn-primary"><i class="bi bi-three-dots"></i></a>

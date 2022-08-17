@@ -40,7 +40,7 @@ class PostController extends AbstractController
             $post->setCreatedAt(new DateTimeImmutable());
             $postRepo->add($post, true);
 
-            $this->addFlash('success', 'Point d\'interet ajouté');
+            $this->addFlash('success', 'Point d\'intérêt ajouté');
             return $this->redirectToRoute('admin_post_list', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -70,9 +70,10 @@ class PostController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $post->setUpdatedAt(new DateTimeImmutable());
             $postRepo->add($post, true);
             
-            $this->addFlash('warning', 'Point d\'interet modifié');
+            $this->addFlash('warning', 'Point d\'intérêt modifié');
             return $this->redirectToRoute('admin_post_list', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -91,7 +92,7 @@ class PostController extends AbstractController
             $postRepo->remove($post, true);
         }
 
-        $this->addFlash('danger', 'Point d\'interet supprimé');
+        $this->addFlash('danger', 'Point d\'intérêt supprimé');
         return $this->redirectToRoute('admin_post_list', [], Response::HTTP_SEE_OTHER);
     }
 
