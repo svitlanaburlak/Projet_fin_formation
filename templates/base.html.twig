@@ -56,7 +56,6 @@
                                 data-bs-toggle="dropdown">
                             {% if app.user is defined and app.user is not null %}
                                 <span>
-                                {# because we have getRoleName function in our User entity#}
                                     {{ app.user.roleName }} : {{ app.user.email }}
                                 </span>
                             {% else %} 

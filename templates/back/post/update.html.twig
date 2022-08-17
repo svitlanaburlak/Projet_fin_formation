@@ -5,9 +5,6 @@
 {% block body %}
     <div class="d-flex justify-content-evenly">
         <h1>Modifier un point d'interet</h1>
-        <div class="d-flex align-items-center">        
-            <a href="" class="btn btn-sm btn-success px-5"><i class="bi bi-plus-circle"></i></a>
-        </div>
     </div>
 
     {% for label, messages in app.flashes %}
@@ -19,7 +16,11 @@
         {% endfor %}
     {% endfor %}
 
-    {{ include('back/post/_form.html.twig') }}
+    <div class="container px-4">
+
+        {{ include('back/post/_form.html.twig') }}
+
+    </div>
     
 
 {% endblock %}

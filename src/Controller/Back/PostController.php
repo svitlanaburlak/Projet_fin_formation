@@ -5,6 +5,7 @@ namespace App\Controller\Back;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
+use DateTimeImmutable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,7 +27,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts", name="create", methods={"GET", "POST"})
+     * @Route("/posts/create", name="create", methods={"GET", "POST"})
      */
     public function create(Request $request, PostRepository $postRepo): Response
     {
@@ -34,9 +35,9 @@ class PostController extends AbstractController
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
-        var_dump($form);
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $post->setCreatedAt(new DateTimeImmutable());
             $postRepo->add($post, true);
 
             $this->addFlash('success', 'Point d\'interet ajouté');
@@ -60,7 +61,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/{id}", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
+     * @Route("/posts/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function update(Request $request, Post $post, PostRepository $postRepo): Response
     {
