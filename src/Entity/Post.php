@@ -6,6 +6,7 @@ use App\Repository\PostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -16,41 +17,64 @@ class Post
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=2048, nullable=true)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
+     * @Groups({"api_category_post"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_category_post"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="string", length=128)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="smallint", options={"default" : 1} )
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $status;
 
     /**
      * @ORM\Column(type="datetime_immutable")
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $createdAt;
 
@@ -61,18 +85,24 @@ class Post
 
     /**
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="posts")
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="posts")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"api_post_read"})
+     * @Groups({"api_category_post"})
      */
     private $city;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="post")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
      */
     private $user;
 

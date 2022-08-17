@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -18,11 +19,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
+     * @Groups({"api_user_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"api_user_read"})
      */
     private $email;
 
@@ -39,37 +44,53 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"api_city_read"})
+     * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups({"api_user_read"})
      */
     private $presentation;
 
     /**
      * @ORM\Column(type="string", length=2048, nullable=true)
+     * @Groups({"api_user_read"})
      */
     private $image;
 
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user")
+     * @Groups({"api_user_read"})
      */
     private $post;
 
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="users")
+     * @Groups({"api_user_read"})
      */
     private $city;
 
     public function __construct()
     {
         $this->post = new ArrayCollection();
+        $this->setRoles(['ROLE_USER']);
+    }
+
+    public function __toString() 
+    {
+        return $this->firstname . $this->lastname;
     }
 
     public function getId(): ?int
