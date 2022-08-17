@@ -25,4 +25,26 @@ class CityController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/", name="create", methods={"POST"})
+     */
+    public function create(Request $request, CityRepository $cityRepo): Response
+    {
+        $city = new City();
+
+        // todo créer le form CityType
+        $form = $this->createForm(CityType::class, $city);
+        $form->handleRequest($city);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $cityRepo->add($city, true);
+
+            return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('back/city/new.html.twig', [
+            'city' => $city,
+            'form' => $form,
+        ]);
+    }
 }
