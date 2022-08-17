@@ -6,7 +6,6 @@
 <div class="container">
     <h1>City index</h1>
 
-    {# todo ajouter dans nav : #}
     <a class="btn btn-secondary" href="{{ path('app_back_city_create') }}">Ajouter</a>
     <a class="btn btn-secondary" href="{{ path('app_back_city_list') }}">Liste</a>
 
@@ -37,7 +36,7 @@
                 <td>{{ city.slug }}</td>
                 <td>{{ city.description }}</td>
                 <td>
-                    {# todo add Read & Update in CityController #}
+
                     <a class="btn btn-primary" href="{{ path('app_back_city_read', {'id': city.id}) }}">Voir</a>
                     <a class="btn btn-secondary" href="{{ path('app_back_city_update', {'id': city.id}) }}">Modifier</a>
                 </td>

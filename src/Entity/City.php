@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=CityRepository::class)
@@ -32,6 +34,7 @@ class City
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -39,6 +42,7 @@ class City
      * @ORM\Column(type="string", length=2048)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Assert\NotBlank
      */
     private $image;
 
@@ -46,6 +50,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Assert\NotBlank
      */
     private $country;
 
@@ -53,6 +58,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Assert\NotBlank
      */
     private $slug;
 
@@ -60,6 +66,7 @@ class City
      * @ORM\Column(type="text")
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Assert\NotBlank
      */
     private $description;
 
