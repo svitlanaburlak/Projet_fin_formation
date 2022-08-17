@@ -1,10 +1,10 @@
 {% extends 'back/city/_base.html.twig' %}
 
-{% block title %}City index{% endblock %}
+{% block title %}Liste des villes{% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1>City index</h1>
+    <h1>Liste des villes</h1>
 
     <a class="btn btn-secondary" href="{{ path('app_back_city_create') }}">Ajouter</a>
     <a class="btn btn-secondary" href="{{ path('app_back_city_list') }}">Liste</a>
@@ -13,9 +13,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Image</th>
-                <th>Country</th>
+                <th>Pays</th>
                 <th>Slug</th>
                 <th>Description</th>
             </tr>
@@ -43,7 +43,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
