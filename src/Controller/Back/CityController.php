@@ -19,7 +19,7 @@ class CityController extends AbstractController
      */
     public function list(CityRepository $cityRepo): Response
     {
-        return $this->render('back/city/index.html.twig', [
+        return $this->render('back/city/list.html.twig', [
             'controller_name' => 'CityController',
             'cities' => $cityRepo->findAll(),
         ]);
