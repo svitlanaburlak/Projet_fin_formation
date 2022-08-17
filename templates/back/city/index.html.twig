@@ -1,0 +1,49 @@
+{% extends 'back/city/_base.html.twig' %}
+
+{% block title %}City index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>City index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Country</th>
+                <th>Slug</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for city in cities %}
+            <tr>
+                <td>{{ city.id }}</td>
+                <td>
+                {% if city.image != "" %}
+                    <img style="max-width:100px" src="{{ city.image }}" />
+                {% else %}
+                    <p>Pas d'image définie</p>
+                {% endif %}
+                </td>
+                <td>{{ city.name }}</td>
+                <td>{{ city.country }}</td>
+                <td>{{ city.slug }}</td>
+                <td>{{ city.description }}</td>
+                <td>
+                    {# todo add Read & Update in CityController #}
+                    {# <a class="btn btn-primary" href="{{ path('', {'id': city.id}) }}">Voir</a>
+                    <a class="btn btn-secondary" href="{{ path('', {'id': city.id}) }}">Modifier</a> #}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
