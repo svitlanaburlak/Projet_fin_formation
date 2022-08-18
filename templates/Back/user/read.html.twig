@@ -1,4 +1,4 @@
-{% extends 'back/user/_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Utilisateur{% endblock %}
 
@@ -16,10 +16,10 @@
                 <th>Email</th>
                 <td>{{ user.email }}</td>
             </tr>
-            {# <tr>
+            <tr>
                 <th>Rôle</th>
-                <td>{{ user.roles }}</td>
-            </tr> #}
+                <td>{{ user.rolesName }}</td>
+            </tr>
             <tr>
                 <th>Prénom</th>
                 <td>{{ user.firstname }}</td>
@@ -47,7 +47,8 @@
         </tbody>
     </table>
 
-    {{ include('back/user/_delete_form.html.twig') }}
-    {# {{ include('back/user/list.html.twig', {'button_label': 'Retour'}) }}     #}
+        {{ include('back/user/_delete_form.html.twig') }}
+        <a class="btn btn-success" href="{{ path('admin_user_list') }}">Retour</a>
+
 </div>
 {% endblock %}
