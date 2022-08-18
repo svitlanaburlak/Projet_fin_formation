@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Point d'intérêt{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Point d'intérêt</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ post.image }}" width="100px"></td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ post.content }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ post.address }}</td>
+            </tr>
+             <tr>
+                <th>Date</th>
+                <td>{{ post.date|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th>Satus</th>
+                <td>
+                    {% if post.status is same as 1 %}
+                        actif
+                    {% else %}
+                        inactif
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td><a href=""><span class="btn btn-warning">{{ post.city.name }}</span></a></td>
+            </tr>
+            <tr>
+                <th>Utilisateur</th>
+                <td>{{ post.user.email }}</td>
+            </tr>
+            <tr>
+                <th>Categories</th>
+                <td>
+                    {% for category in post.category %}
+                        <a href=""><span class="btn btn-info">{{ category.name }}</span></a>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Date de creation</th>
+                <td>{{ post.createdAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Date de modification</th>
+                {% if post.updatedAt is defined and post.updatedAt is not null %}
+                    <td>{{ post.updatedAt|date('Y-m-d H:i:s') }}</td>
+                {% else %}
+                    <th>pas encore modifié</th>
+                {% endif %}
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('admin_post_update', {'id': post.id}) }}">Modifier</a>
+
+    {{ include('back/post/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
