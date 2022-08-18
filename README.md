@@ -19,3 +19,14 @@ Démarrez votre nouvelle vie !
 - [Svitlana Burlak](https://github.com/svitlanaburlak)
 - [Marilyne Druart](https://github.com/MarilyneDruart)
 - [Pierre-Henri Kocan](https://github.com/Pierre-Henri-Kocan)
+
+## Installation
+1. Lancer `composer install`
+2. Créer et configuer configurer le `.env.local`
+  - login et mot de passe d'Adminer/PhpAdmin
+  - verifier la verison de mysql ```mysql --version```
+  - ```DATABASE_URL="mysql://login:password@127.0.0.1:3306/tribu?serverVersion=10.3.25-MariaDB&charset=utf8mb4"```
+3. Lancer les commandes:
+  - `bin/console doctrine:database:create`
+  - `bin/console doctrine:migrations:migrate`
+  - `bin/console doctrine:fixtures:load`
