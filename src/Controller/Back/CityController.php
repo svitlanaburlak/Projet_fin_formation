@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/admin/cities", name="app_back_city_")
+ * @Route("/admin/cities", name="back_city_")
  */
 class CityController extends AbstractController
 {
@@ -39,7 +39,7 @@ class CityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $cityRepository->add($city, true);
 
-            return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/city/create.html.twig', [
@@ -69,7 +69,7 @@ class CityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $cityRepository->add($city, true);
 
-            return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/city/update.html.twig', [
@@ -87,6 +87,6 @@ class CityController extends AbstractController
             $cityRepository->remove($city, true);
         }
 
-        return $this->redirectToRoute('app_back_city_list', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
     }
 }

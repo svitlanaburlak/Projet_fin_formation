@@ -6,8 +6,8 @@
 <div class="container">
     <h1>Liste des villes</h1>
 
-    <a class="btn btn-secondary" href="{{ path('app_back_city_create') }}">Ajouter</a>
-    <a class="btn btn-secondary" href="{{ path('app_back_city_list') }}">Liste</a>
+    <a class="btn btn-secondary" href="{{ path('back_city_create') }}">Ajouter</a>
+    <a class="btn btn-secondary" href="{{ path('back_city_list') }}">Liste</a>
 
     <table class="table">
         <thead>
@@ -37,8 +37,8 @@
                 <td>{{ city.description }}</td>
                 <td>
 
-                    <a class="btn btn-primary" href="{{ path('app_back_city_read', {'id': city.id}) }}">Voir</a>
-                    <a class="btn btn-secondary" href="{{ path('app_back_city_update', {'id': city.id}) }}">Modifier</a>
+                    <a class="btn btn-primary" href="{{ path('back_city_read', {'id': city.id}) }}">Voir</a>
+                    <a class="btn btn-secondary" href="{{ path('back_city_update', {'id': city.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
