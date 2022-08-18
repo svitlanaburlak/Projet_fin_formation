@@ -42,8 +42,8 @@
                 </td>
                 <td>{{ user.city }}</td>
                 <td>
-                    <a href="{{ path('admin_category_read', {'id': user.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
-                    <a href="{{ path('admin_category_update', {'id': user.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ path('admin_user_read', {'id': user.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
+                    <a href="{{ path('admin_user_update', {'id': user.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
                     <form method="post" action="{{ path('admin_user_delete', {'id': user.id}) }}"
                         onsubmit="return confirm('Etes vous sur ?');">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
