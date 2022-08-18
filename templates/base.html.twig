@@ -25,7 +25,7 @@
         <div class="container-fluid">
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
                     <img src="{{ asset('logo.png') }}" height="50" alt="Tribu Logo">
-                    <span class="header-logo__title">Tribu BackOffice</span>
+                    <span class="header-logo__title">BackOffice</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
@@ -40,13 +40,13 @@
                             <a class="nav-link" href="{{ path('admin_city_list')}}"><i class="bi bi-bookmark"></i>Villes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_user_list')}}"><i class="bi bi-bookmark"></i>Users</a>
+                            <a class="nav-link" href="{{ path('admin_user_list')}}"><i class="bi bi-bookmark"></i>Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_post_list')}}"><i class="bi bi-bookmark"></i>Posts</a>
+                            <a class="nav-link" href="{{ path('admin_post_list')}}"><i class="bi bi-bookmark"></i>Points d'intérêts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_category_list')}}"><i class="bi bi-bookmark"></i>Categories</a>
+                            <a class="nav-link" href="{{ path('admin_category_list')}}"><i class="bi bi-bookmark"></i>Catégories</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href=""><i class="bi bi-bookmark"></i>Tribu Front</a>
@@ -69,9 +69,9 @@
                     </ul>
 
                     {% if app.user is defined and app.user is not null %}
-                        <button type="button" class="btn btn-danger me-2"><a href="#">Déconnexion</a></button>
+                        <a href="#" type="button" class="btn btn-danger me-2">Déconnexion</a>
                     {% else %}
-                        <button type="button" class="btn btn-danger me-2"><a href="#">Connexion</a></button>
+                        <a href="#" type="button" class="btn btn-danger me-2">Connexion</a>
                     {% endif %}
                     
                 </div>
