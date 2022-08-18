@@ -48,7 +48,11 @@
             </tr>
             <tr>
                 <th>Utilisateur</th>
-                <td>{{ post.user.email }}</td>
+                {% if post.user %}
+                <td>{{ post.user.firstname }}</td>
+                {% else %}
+                <td>Inconnu</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Categories</th>
@@ -74,6 +78,7 @@
     </table>
 
     <a class="btn btn-primary" href="{{ path('admin_post_update', {'id': post.id}) }}">Modifier</a>
+    <a class="btn btn-success" href="{{ path('admin_post_list', {'id': post.id}) }}">Retour</a>
 
     {{ include('back/post/_delete_form.html.twig') }}
     </div>

@@ -35,6 +35,7 @@
         {% for city in cities %}
             <tr>
                 <td>{{ city.id }}</td>
+                <td><a href="{{ path('admin_city_read', {'id': city.id}) }}">{{ city.name }}<a></td>
                 <td>
                 {% if city.image != "" %}
                     <img style="max-width:100px" src="{{ city.image }}" />
@@ -42,7 +43,6 @@
                     <p>Pas d'image définie</p>
                 {% endif %}
                 </td>
-                <td>{{ city.name }}</td>
                 <td>{{ city.country }}</td>
                 <td>{{ city.slug }}</td>
                 <td>{{ city.description }}</td>

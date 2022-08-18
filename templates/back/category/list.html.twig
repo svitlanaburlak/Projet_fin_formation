@@ -31,7 +31,7 @@
         {% for category in categories %}
             <tr>
                 <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
+                <td><a href="{{ path('admin_category_read', {'id': category.id}) }}">{{ category.name }}<a></td>
                 <td>
                     <a href="{{ path('admin_category_read', {'id': category.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
                     <a href="{{ path('admin_category_update', {'id': category.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>

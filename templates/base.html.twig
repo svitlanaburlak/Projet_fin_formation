@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-                    <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
+                    <a href="{{ path('admin_home')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
                     <img src="{{ asset('logo.png') }}" height="50" alt="Tribu Logo">
                     <span class="header-logo__title">BackOffice</span>
                 </a>
@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="">Accueil</a>
+                            <a class="nav-link active" href="{{ path('admin_home')}}">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('admin_city_list')}}"><i class="bi bi-bookmark"></i>Villes</a>
