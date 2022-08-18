@@ -12,12 +12,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/admin", name="admin_post_")
+ * @Route("/admin/posts", name="admin_post_")
  */
 class PostController extends AbstractController
 {
     /**
-     * @Route("/posts", name="list", methods={"GET"})
+     * @Route("/", name="list", methods={"GET"})
      */
     public function list(PostRepository $postRepo): Response
     {
@@ -27,7 +27,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/create", name="create", methods={"GET", "POST"})
+     * @Route("/create", name="create", methods={"GET", "POST"})
      */
     public function create(Request $request, PostRepository $postRepo): Response
     {
@@ -51,7 +51,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
+     * @Route("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function read(Post $post): Response
     {
@@ -61,7 +61,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
+     * @Route("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function update(Request $request, Post $post, PostRepository $postRepo): Response
     {
@@ -84,7 +84,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Post $post, PostRepository $postRepo): Response
     {

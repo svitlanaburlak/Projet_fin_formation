@@ -35,12 +35,6 @@ class PostType extends AbstractType
                     'expanded' => true,
                 'multiple' => false,
                 ])
-            ->add('updatedAt', DateType::class,
-                [ 'label' => 'Date de modification',
-                'widget' => 'single_text',
-                'input' => 'datetime',
-                'html5' => true,
-                ])
             ->add('category',
                 EntityType::class, [
                     'class' => Category::class,

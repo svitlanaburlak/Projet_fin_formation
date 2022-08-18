@@ -60,11 +60,15 @@
             </tr>
             <tr>
                 <th>Date de creation</th>
-                <td>{{ post.createdAt|date('Y-m-d') }}</td>
+                <td>{{ post.createdAt|date('Y-m-d H:i:s') }}</td>
             </tr>
             <tr>
                 <th>Date de modification</th>
-                <td>{{ post.updatedAt|date('Y-m-d') }}</td>
+                {% if post.updatedAt is defined and post.updatedAt is not null %}
+                    <td>{{ post.updatedAt|date('Y-m-d H:i:s') }}</td>
+                {% else %}
+                    <th>pas encore modifié</th>
+                {% endif %}
             </tr>
         </tbody>
     </table>
