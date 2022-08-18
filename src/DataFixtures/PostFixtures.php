@@ -10,6 +10,9 @@ use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
+use function PHPUnit\Framework\isEmpty;
+use function PHPUnit\Framework\isNull;
+
 class PostFixtures extends Fixture implements DependentFixtureInterface
 {
     public function getDependencies()
@@ -625,11 +628,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             [
                 "title" => "Giolitti",
                 "content" => "",
-                "date" => "",
                 "address" => "Via degli Uffici del Vicario, 40, 00186 Roma",
                 "image" => "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                "status" => "",
-                "created_at" => "",
                 "user" => "edd.hyatt@kling.info",
                 "city" => "Rome",
                 "categories" => [
@@ -639,11 +639,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             [
                 "title" => "Forum Romain",
                 "content" => "Situé entre le Colisée et le Circus Maximus, le Forum est le site archéologique le plus important de Rome. Bâti sur le Mont Palatin, le Forum est la place principale de la Rome antique.",
-                "date" => "",
                 "address" => "Via della Salara Vecchia, 5/6, 00186 Roma",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -657,8 +654,6 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-04-21",
                 "address" => "",
                 "image" => "https://images.rove.me/w_740,q_85/asqpclxdz0wrzv3zcykm/rome-natale-di-roma-or-romes-birthday.jpg",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -668,11 +663,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             [
                 "title" => "Trattoria Vecchia Roma",
                 "content" => "Depuis 1916 cette trattoria et pizzeria à l'ambiance intimiste, aux murs bordeaux décorés de fresques et d'arches en briques apparentes sert des plats typiques de la cuisine italienne et romaine",
-                "date" => "",
                 "address" => "Via Ferruccio, 12/b/c, 00185 Roma",
                 "image" => "https://xdaysiny.com/wp-content/uploads/2019/09/Trattoria-Vecchia-Roma-Rome-best-Restaurant.jpg",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -685,8 +677,6 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-10-05",
                 "address" => " 00120 Vatican City",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/7/73/God2-Sistine_Chapel.png",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -696,11 +686,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             [
                 "title" => "Millepiani Coworking",
                 "content" => "Millepiani est le gagnant du prix Rome's Best Cowork, décerné par Coworker.com ! C'est un open space de 400 mètres carrés, qui comprend un espace événementiel (100 places et écran de projection), une salle de réunion (15 places avec écran plasma), et plusieurs bureaux pour startups et coworkers.",
-                "date" => "",
                 "address" => "Via Nicolo Odero, 13, 00154 Roma",
                 "image" => "https://coworkingmap.org/wp-content/uploads/2016/12/a-millepiani1L-705x467.jpg",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -713,8 +700,6 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-08-22",
                 "address" => "Viale dei Gladiatori, 00135 Roma",
                 "image" => "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt9d46c72d1c8d443b/60db4959ed93bb0fb198477e/a9d2077244811ea3de761399f5e55e1f920fdafc.png?quality=80&width=1000&format=pjpg&auto=webp",
-                "status" => "",
-                "created_at" => "",
                 "user" => "user@tribu.fr",
                 "city" => "Rome",
                 "categories" => [
@@ -732,7 +717,13 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
 
             $postObj->setTitle($currentPost["title"]);
             $postObj->setContent($currentPost["content"]);
-            $postObj->setDate(new DateTimeImmutable($currentPost["date"]));
+            if(!empty($currentPost["date"])) {
+                $postObj->setDate(new DateTimeImmutable($currentPost["date"])); 
+            }
+            else {
+                $postObj->setDate(null);
+            }
+
             $postObj->setAddress($currentPost["address"]);
             $postObj->setImage($currentPost["image"]);
             $postObj->setStatus(1);
@@ -748,10 +739,10 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             $postObj->setCity($cityObj);
 
             $userObj = $this->getReference($currentPost["user"]);
+            $userObj->setCity($cityObj);
             $postObj->setUser($userObj);
 
             $manager->persist($postObj);
-
 
         }
         $manager->flush();
