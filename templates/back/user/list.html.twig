@@ -28,7 +28,7 @@
             {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
+                <td><a href="{{ path('admin_user_read', {'id': user.id}) }}">{{ user.email }}<a></td>
                 <td>{{ user.rolesName }}</td>
                 <td>{{ user.firstname }}</td>
                 <td>{{ user.lastname }}</td>
