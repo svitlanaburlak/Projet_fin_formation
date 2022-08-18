@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/admin/categories", name="back_category_")
+ * @Route("/admin/categories", name="admin_category_")
  */
 class CategoryController extends AbstractController
 {
@@ -40,7 +40,7 @@ class CategoryController extends AbstractController
             $categoryRepository->add($category, true);
 
             $this->addFlash('success', 'Catégorie ajoutée');
-            return $this->redirectToRoute('back_category_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_category_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/category/create.html.twig', [
@@ -71,7 +71,7 @@ class CategoryController extends AbstractController
             $categoryRepository->add($category, true);
 
             $this->addFlash('success', 'Catégorie modifiée');
-            return $this->redirectToRoute('back_category_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_category_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/category/update.html.twig', [
@@ -90,6 +90,6 @@ class CategoryController extends AbstractController
         }
 
         $this->addFlash('success', 'Catégorie supprimée');
-        return $this->redirectToRoute('back_category_list', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_category_list', [], Response::HTTP_SEE_OTHER);
     }
 }

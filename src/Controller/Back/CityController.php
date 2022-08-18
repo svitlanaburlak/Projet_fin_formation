@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/admin/cities", name="back_city_")
+ * @Route("/admin/cities", name="admin_city_")
  */
 class CityController extends AbstractController
 {
@@ -40,7 +40,7 @@ class CityController extends AbstractController
             $cityRepository->add($city, true);
 
             $this->addFlash('success', 'Ville ajoutée');
-            return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/city/create.html.twig', [
@@ -71,7 +71,7 @@ class CityController extends AbstractController
             $cityRepository->add($city, true);
 
             $this->addFlash('success', 'Ville modifiée');
-            return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('back/city/update.html.twig', [
@@ -90,6 +90,6 @@ class CityController extends AbstractController
         }
 
         $this->addFlash('success', 'Ville supprimée');
-        return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin_city_list', [], Response::HTTP_SEE_OTHER);
     }
 }
