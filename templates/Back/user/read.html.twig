@@ -34,7 +34,13 @@
             </tr>
             <tr>
                 <th>Photo</th>
-                <td>{{ user.image }}</td>
+                <td> 
+                {% if user.image != "" %}
+                    <img style="max-width:400px" src="{{ user.image }}" />
+                {% else %}
+                    <p>Pas d'image définie</p>
+                {% endif %}
+                </td>
             </tr>
             {# <tr>
                 <th>Points d'intérêt</th>

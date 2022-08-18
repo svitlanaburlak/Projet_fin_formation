@@ -38,13 +38,13 @@ class UserController extends AbstractController
             $passwordClear = $user->getPassword();
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
-
+          
             $userRepository->add($user, true);
 
-            return $this->redirectToRoute('admin_user_create', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin_user_list', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('back/user/new.html.twig', [
+                return $this->renderForm('back/user/create.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
