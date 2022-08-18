@@ -22,6 +22,8 @@ class City
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $id;
 
@@ -32,6 +34,8 @@ class City
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $name;
 
@@ -39,6 +43,7 @@ class City
      * @ORM\Column(type="string", length=2048)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Groups({"admin_user_list"})
      */
     private $image;
 
@@ -46,6 +51,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Groups({"admin_user_list"})
      */
     private $country;
 
@@ -53,6 +59,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Groups({"admin_user_list"})
      */
     private $slug;
 
@@ -60,6 +67,7 @@ class City
      * @ORM\Column(type="text")
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
+     * @Groups({"admin_user_list"})
      */
     private $description;
 

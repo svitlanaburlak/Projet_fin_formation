@@ -19,6 +19,7 @@ class Category
      * @ORM\Column(type="integer")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_read"})
      */
     private $id;
 
@@ -26,6 +27,7 @@ class Category
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_read"})
      */
     private $name;
 
