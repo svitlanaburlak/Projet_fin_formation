@@ -13,29 +13,25 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-    /**
-     * @Route("/api", name="api_post_")
-     */
-
+/**
+ * @Route("/api", name="api_post_")
+ */
 class PostController extends AbstractController
 {
-     /**
-     * @Route("/posts/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
-     */
-
+    /**
+    * @Route("/posts/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
+    */
     public function read(PostRepository $postRepo, int $id): Response
     {
         $post = $postRepo->find($id);
         return $this->json($post, 200, [], ['groups' => 'api_post_read']);
     }
 
-     /**
-     * @Route("/posts", name="create", methods={"POST"})
-     */
-
-     //Todo test with Thunder client 
+    /**
+    * @Route("/posts", name="create", methods={"POST"})
+    */
     public function create(
-        EntityManagerInterface $em, 
+        PostRepository $postRepo, 
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator
@@ -56,8 +52,7 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-        $em->persist($post);
-        $em->flush();
+        $postRepo->add($post, true);
 
         return $this->json('OK', Response::HTTP_CREATED);
     }

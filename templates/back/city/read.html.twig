@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ville{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Ville</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ city.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ city.name }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>
+                {% if city.image != "" %}
+                    <img style="max-width:750px" src="{{ city.image }}" />
+                {% else %}
+                    <p>Pas d'image définie</p>
+                {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Pays</th>
+                <td>{{ city.country }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ city.slug }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ city.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('back_city_update', {'id': city.id}) }}">Modifier</a>
+
+    {{ include('back/city/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

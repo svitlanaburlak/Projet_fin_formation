@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -32,8 +33,7 @@ class Post
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
-     * @Groups({"admin_user_list"})
-     * @Groups({"admin_user_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $title;
 
@@ -52,7 +52,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_category_post"})
-     * @Groups({"admin_user_list"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $content;
 
@@ -69,7 +69,7 @@ class Post
      * @ORM\Column(type="string", length=128)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
-     * @Groups({"admin_user_list"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $address;
 
@@ -111,7 +111,7 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"api_post_read"})
      * @Groups({"api_category_post"})
-     * @Groups({"admin_user_list"})
+     * @Assert\NotBlank(message="Merci de choisir une ville")
      */
     private $city;
 
@@ -120,6 +120,7 @@ class Post
      * @ORM\JoinColumn(nullable=true)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $user;
 
