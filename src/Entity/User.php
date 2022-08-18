@@ -22,23 +22,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $password;
 
@@ -47,6 +55,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $firstname;
 
@@ -55,30 +65,40 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $presentation;
 
     /**
      * @ORM\Column(type="string", length=2048, nullable=true)
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $image;
 
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user")
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $post;
 
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="users")
      * @Groups({"api_user_read"})
+     * @Groups({"admin_user_read"})
+     * @Groups({"admin_user_list"})
      */
     private $city;
 
@@ -134,10 +154,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
+    }
+
+    public function getRolesName() :string
+    {
+        $arrayRole = $this->getRoles();
+        return implode($arrayRole);
+
     }
 
     public function setRoles(array $roles): self

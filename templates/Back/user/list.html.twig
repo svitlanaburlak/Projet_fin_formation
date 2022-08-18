@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Back Office{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
+</style>
+
+<div class="container">
+    <h1>Liste des utilisateurs</h1>
+    <a class="btn btn-success" href="{{ path('admin_user_create') }}">Ajouter</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Présentation</th>
+                <th>Photo</th>
+                <th>Ville</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.rolesName }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.presentation }}</td>
+                <td>                
+                    {% if user.image != "" %}
+                    <img style="max-width:200px" src="{{ user.image }}" />
+                {% else %}
+                    <p>Pas d'image définie</p>
+                {% endif %}
+                </td>
+                <td>{{ user.city }}</td>
+
+                <td>
+                    <a class="btn btn-primary" href="{{ path('admin_user_read', {'id': user.id}) }}">Afficher</a>
+                    <a class="btn btn-warning" href="{{ path('admin_user_update', {'id': user.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('admin_user_delete', {'id': user.id}) }}"
+                        onsubmit="return confirm('Etes vous sur ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                        <button class="btn btn-danger mt-1">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -24,6 +24,8 @@ class City
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $id;
 

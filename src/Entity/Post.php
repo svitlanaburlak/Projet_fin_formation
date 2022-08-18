@@ -22,6 +22,8 @@ class Post
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $id;
 
@@ -41,6 +43,7 @@ class Post
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
+     * @Groups({"admin_user_list"})
      */
     private $image;
 
@@ -57,6 +60,8 @@ class Post
      * @ORM\Column(type="datetime", nullable=true)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $date;
 
@@ -72,6 +77,8 @@ class Post
      * @ORM\Column(type="smallint", options={"default" : 1} )
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $status;
 
@@ -79,11 +86,15 @@ class Post
      * @ORM\Column(type="datetime_immutable")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @Groups({"admin_user_list"})
+     * @Groups({"admin_user_read"})
      */
     private $updatedAt;
 
@@ -91,6 +102,7 @@ class Post
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="posts")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Groups({"admin_user_list"})
      */
     private $category;
 
@@ -105,7 +117,7 @@ class Post
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="post")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
