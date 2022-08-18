@@ -54,24 +54,36 @@
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            
+                            {% if app.user %}
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown">
 
-                                <span>Admin</span>
+                                <span>{{ app.user.email }}</span>
                            
                                 <i class="bi bi-person-square"></i>
                             </a>
+                            
+                            {% else %}
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+
+                                <span>Non connecté</span>
+                           
+                                <i class="bi bi-person-square"></i>
+                            </a>
+                            {% endif %}
+                            {% if app.user %}
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="">Profil</a></li>
+                                <li><a class="dropdown-item" href="{{ path('admin_user_read', {'id': app.user.id}) }}">Profil</a></li>
                             </ul>
+                            {% endif %}
                         </li>
                     </ul>
 
                     {% if app.user is defined and app.user is not null %}
-                        <a href="#" type="button" class="btn btn-danger me-2">Déconnexion</a>
+                        <a href="{{ path('app_logout') }}" type="button" class="btn btn-danger me-2">Déconnexion</a>
                     {% else %}
-                        <a href="#" type="button" class="btn btn-danger me-2">Connexion</a>
+                        <a href="{{ path('app_login') }}" type="button" class="btn btn-danger me-2">Connexion</a>
                     {% endif %}
                     
                 </div>
