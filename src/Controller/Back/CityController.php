@@ -39,6 +39,7 @@ class CityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $cityRepository->add($city, true);
 
+            $this->addFlash('success', 'Ville ajoutée');
             return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -69,6 +70,7 @@ class CityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $cityRepository->add($city, true);
 
+            $this->addFlash('success', 'Ville modifiée');
             return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -87,6 +89,7 @@ class CityController extends AbstractController
             $cityRepository->remove($city, true);
         }
 
+        $this->addFlash('success', 'Ville supprimée');
         return $this->redirectToRoute('back_city_list', [], Response::HTTP_SEE_OTHER);
     }
 }

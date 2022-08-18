@@ -1,14 +1,24 @@
-{% extends 'back/city/_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Liste des villes{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Liste des villes</h1>
+    <div class="d-flex justify-content-evenly">
+        <h1>Liste des villes</h1>
+        <div class="d-flex align-items-center">        
+            <a href="{{ path('back_city_create') }}"class="btn btn-sm btn-success px-5" title="Ajouter"><i class="bi bi-plus-circle"></i></a>
+        </div>
+    </div>
 
-    <a class="btn btn-secondary" href="{{ path('back_city_create') }}">Ajouter</a>
-    <a class="btn btn-secondary" href="{{ path('back_city_list') }}">Liste</a>
-
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+        
     <table class="table">
         <thead>
             <tr>
@@ -37,8 +47,8 @@
                 <td>{{ city.description }}</td>
                 <td>
 
-                    <a class="btn btn-primary" href="{{ path('back_city_read', {'id': city.id}) }}">Voir</a>
-                    <a class="btn btn-secondary" href="{{ path('back_city_update', {'id': city.id}) }}">Modifier</a>
+                    <a href="{{ path('back_city_read', {'id': city.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
+                    <a href="{{ path('back_city_update', {'id': city.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -48,5 +58,4 @@
         {% endfor %}
         </tbody>
     </table>
-</div>
 {% endblock %}

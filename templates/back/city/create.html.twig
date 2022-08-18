@@ -1,13 +1,26 @@
-{% extends 'back/city/_base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Nouvelle Ville{% endblock %}
 
 {% block body %}
 
-<div class="container">
-    <h1>Ajouter une nouvelle ville</h1>
+    <div class="d-flex justify-content-evenly">
+        <h1>Ajouter une nouvelle ville</h1>
+    </div>
 
-    {{ include('back/city/_form.html.twig') }}
 
-</div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+    <div class="container px-4">
+        {{ include('back/city/_form.html.twig') }}
+
+    </div>
+
 {% endblock %}
