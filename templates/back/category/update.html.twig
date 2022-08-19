@@ -3,19 +3,23 @@
 {% block title %}Catégorie{% endblock %}
 
 {% block body %}
+
 <div class="container">
     <h1>Modifier une catégorie</h1>
 
-    {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
 
-    {{ include('back/category/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    <div class="container px-4">
+        {{ include('back/category/_form.html.twig') }}
+
+    </div>
 
 </div>
 {% endblock %}

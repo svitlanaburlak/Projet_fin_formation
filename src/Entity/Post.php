@@ -101,7 +101,7 @@ class Post
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"api_post_read"})
      * @Groups({"api_category_post"})
-     * @Assert\NotBlank(message="Merci de choisir une ville")
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $city;
 

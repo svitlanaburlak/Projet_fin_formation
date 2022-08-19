@@ -34,7 +34,7 @@ class City
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $name;
 
@@ -42,7 +42,7 @@ class City
      * @ORM\Column(type="string", length=2048)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $image;
 
@@ -50,7 +50,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $country;
 
@@ -58,7 +58,7 @@ class City
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $slug;
 
@@ -66,7 +66,7 @@ class City
      * @ORM\Column(type="text")
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $description;
 
