@@ -30,7 +30,7 @@
             </tr>
              <tr>
                 <th>Date</th>
-                <td>{{ post.date|date('Y-m-d') }}</td>
+                <td>{{ post.date }}</td>
             </tr>
             <tr>
                 <th>Satus</th>
@@ -64,12 +64,12 @@
             </tr>
             <tr>
                 <th>Date de creation</th>
-                <td>{{ post.createdAt|date('Y-m-d H:i:s') }}</td>
+                <td>{{ post.createdAt }}</td>
             </tr>
             <tr>
                 <th>Date de modification</th>
                 {% if post.updatedAt is defined and post.updatedAt is not null %}
-                    <td>{{ post.updatedAt|date('Y-m-d H:i:s') }}</td>
+                    <td>{{ post.updatedAt }}</td>
                 {% else %}
                     <th>pas encore modifié</th>
                 {% endif %}
