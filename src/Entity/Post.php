@@ -174,8 +174,11 @@ class Post
 
     public function getDate(): ?string
     {
-        // date("Y-m-d H:i:s");
-        return $this->date->format('Y-m-d H:i:s');
+        if(!is_null($this->date)) {
+           return $this->date->format('Y-m-d H:i:s'); 
+        }
+        return $this->date;
+        
     }
 
     public function setDate(?\DateTimeInterface $date): self
@@ -223,7 +226,11 @@ class Post
 
     public function getUpdatedAt(): ?string
     {
-        return $this->updatedAt->format('Y-m-d H:i:s');
+        if(!is_null($this->updatedAt)) {
+            return $this->updatedAt->format('Y-m-d H:i:s'); 
+        }
+
+        return $this->updatedAt;
     }
 
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
