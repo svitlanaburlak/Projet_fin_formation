@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PostRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -170,9 +172,13 @@ class Post
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
+        if(!is_null($this->date)) {
+           return $this->date->format('Y-m-d H:i:s'); 
+        }
         return $this->date;
+        
     }
 
     public function setDate(?\DateTimeInterface $date): self
@@ -206,9 +212,9 @@ class Post
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?string
     {
-        return $this->createdAt;
+        return $this->createdAt->format('Y-m-d H:i:s');
     }
 
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
@@ -218,8 +224,12 @@ class Post
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?string
     {
+        if(!is_null($this->updatedAt)) {
+            return $this->updatedAt->format('Y-m-d H:i:s'); 
+        }
+
         return $this->updatedAt;
     }
 

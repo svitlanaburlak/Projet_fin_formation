@@ -5,13 +5,14 @@ namespace App\Controller\Front;
 use App\Entity\Post;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/api", name="api_post_")
@@ -24,6 +25,10 @@ class PostController extends AbstractController
     public function read(PostRepository $postRepo, int $id): Response
     {
         $post = $postRepo->find($id);
+        // var_dump($post);
+        // $date=$post->getDate();
+        // var_dump($date);
+        // die;
         return $this->json($post, 200, [], ['groups' => 'api_post_read']);
     }
 
