@@ -26,7 +26,7 @@ class PostController extends AbstractController
     {
         $post = $postRepo->find($id);
         // var_dump($post);
-        $date=$post->getDate();
+        // $date=$post->getDate();
         // var_dump($date);
         // die;
         return $this->json($post, 200, [], ['groups' => 'api_post_read']);
