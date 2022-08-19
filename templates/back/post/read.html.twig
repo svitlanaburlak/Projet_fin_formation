@@ -78,7 +78,7 @@
     </table>
 
     <a class="btn btn-primary" href="{{ path('admin_post_update', {'id': post.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_post_list', {'id': post.id}) }}">Retour</a>
+    <a class="btn btn-success" href="{{ path('admin_post_list') }}">Retour</a>
 
     {{ include('back/post/_delete_form.html.twig') }}
     </div>

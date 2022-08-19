@@ -20,7 +20,7 @@
     </table>
 
     <a class="btn btn-primary" href="{{ path('admin_category_update', {'id': category.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_category_list', {'id': category.id}) }}">Retour</a>
+    <a class="btn btn-success" href="{{ path('admin_category_list') }}">Retour</a>
 
     {{ include('back/category/_delete_form.html.twig') }}
     </div>
