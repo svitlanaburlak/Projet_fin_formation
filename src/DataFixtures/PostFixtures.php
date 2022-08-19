@@ -78,7 +78,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1581911823256-694b27332788?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "stacy.beer@lindgren.com",
+                "user" => "bartoletti.chandler@howe.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Gastronomie",
@@ -92,7 +92,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "tristin96@reichert.com",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Gastronomie",
@@ -106,7 +106,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1590342360434-7539d8289cd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "deckow.elwin@homenick.com",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Culture",
@@ -120,7 +120,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1562874662-050427780b20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "granville13@williamson.info",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Culture",
@@ -134,7 +134,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1593368858664-a7fe556ab936?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "qemard@dooley.com",
+                "user" => "bartoletti.chandler@howe.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Sorties",
@@ -148,7 +148,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "stokes.elouise@dach.com",
+                "user" => "bartoletti.chandler@howe.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Sorties",
@@ -162,7 +162,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1527979809431-ea3d5c0c01c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1209&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "maggio.kyle@prohaska.org",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Activités",
@@ -176,7 +176,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1220&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Activités",
@@ -190,7 +190,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1560359614-870d1a7ea91d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "felton.franecki@hagenes.com",
+                "user" => "gmetz@walker.biz",
                 "city" => "Barcelone",
                 "categories" => [
                     "Evénements",
@@ -204,7 +204,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1599484206596-adc1a429c2a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1232&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "zwindler@spinka.com",
+                "user" => "gmetz@walker.biz",
                 "city" => "Barcelone",
                 "categories" => [
                     "Evénements",
@@ -218,7 +218,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "gmetz@walker.biz",
+                "user" => "vwiegand@gmail.com",
                 "city" => "Barcelone",
                 "categories" => [
                     "Co-Working",
@@ -232,7 +232,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://media0.faz.net/ppmedia/aktuell/stil/essen-trinken/3501693546/1.5946904/format_top1_breit/woran-liegt-es-dass-menschen.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "bartoletti.chandler@howe.com",
+                "user" => "stacy.beer@lindgren.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Gastronomie",
@@ -246,7 +246,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1642764984363-a1d85a10b834?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1146&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "edd.hyatt@kling.info",
+                "user" => "zwindler@spinka.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Culture",
@@ -260,7 +260,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1545684361-65ed79b47ea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "zarmstrong@jones.info",
+                "user" => "stacy.beer@lindgren.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Evénements",
@@ -274,7 +274,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://img.lemde.fr/2011/01/24/64/0/3336/1668/664/0/75/0/ill_1469666_9031_606233.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "zwindler@spinka.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Activités",
@@ -289,7 +289,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://kaosberlin.de/wp-content/uploads/slider/cache/5125dcabbc39dcafa65310bef15bbcc7/Copyright_by_David_Dollmann_Copyright_by_David_Dollmann_2017.12.06-Kaos-Hallenbilder-Mehrfachbelichtung2519.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "edd.hyatt@kling.info",
+                "user" => "stacy.beer@lindgren.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Co-Working",
@@ -303,7 +303,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Berlin_Konnopke%E2%80%99s_Imbi%C3%9F.jpg/1280px-Berlin_Konnopke%E2%80%99s_Imbi%C3%9F.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "bartoletti.chandler@howe.com",
+                "user" => "zwindler@spinka.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Gastronomie",
@@ -317,7 +317,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://www.visitberlin.de/system/files/styles/visitberlin_bleed_header_visitberlin_desktop_1x/private/image/Kanufahrt_Am_Flutgraben_Foto_Philip_Koschel%20%284%29_web.jpg.webp?h=1c9b88c9&itok=8f5Mu-DM",
                 "status" => "",
                 "created_at" => "",
-                "user" => "edd.hyatt@kling.info",
+                "user" => "stacy.beer@lindgren.com",
                 "city" => "Berlin",
                 "categories" => [
                     "Sorties",
@@ -331,7 +331,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1589442305595-62647c1514f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "tristin96@reichert.com",
                 "city" => "Le Cap",
                 "categories" => [
                     "Gastronomie",
@@ -345,7 +345,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "tristin96@reichert.com",
                 "city" => "Le Cap",
                 "categories" => [
                     "Culture",
@@ -373,7 +373,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1509398484917-2a5b6439feef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "tristin96@reichert.com",
                 "city" => "Le Cap",
                 "categories" => [
                     "Activités",
@@ -387,7 +387,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://www.webtickets.co.za/admin/images/peacelovenbeats/banner_PL&B_Webtickets_Cover_20220808_172737.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "felton.franecki@hagenes.com",
                 "city" => "Le Cap",
                 "categories" => [
                     "Evénements",
@@ -401,7 +401,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "felton.franecki@hagenes.com",
+                "user" => "tristin96@reichert.com",
                 "city" => "Le Cap",
                 "categories" => [
                     "Co-Working",
@@ -415,7 +415,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1586443327882-6a63805ca1fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "zarmstrong@jones.info",
+                "user" => "deckow.elwin@homenick.com",
                 "city" => "Londres",
                 "categories" => [
                     "Gastronomie",
@@ -429,7 +429,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "deckow.elwin@homenick.com",
                 "city" => "Londres",
                 "categories" => [
                     "Sorties",
@@ -445,7 +445,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1575887339850-1acc9d8daf3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "deckow.elwin@homenick.com",
                 "city" => "Londres",
                 "categories" => [
                     "Culture",
@@ -460,7 +460,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "zarmstrong@jones.info",
+                "user" => "deckow.elwin@homenick.com",
                 "city" => "Londres",
                 "categories" => [
                     "Activités",
@@ -475,7 +475,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1572006234180-72c98e5f7f5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "deckow.elwin@homenick.com",
                 "city" => "Londres",
                 "categories" => [
                     "Sorties",
@@ -520,7 +520,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://media-cdn.tripadvisor.com/media/photo-s/14/42/a0/ae/la-terrasse.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Gastronomie",
@@ -534,7 +534,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://www.discoverlosangeles.com/sites/default/files/business/le-petit-paris/h_2000-crm-la-46171922_1929656237109965_2599323978589798400_o0-74c7b8a45056a36_74c7b9c1-5056-a36f-235e917b6b88abbf.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "zarmstrong@jones.info",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Gastronomie",
@@ -548,7 +548,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1566864717473-2f0daf8979e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "shania.monahan@kutch.com",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Culture"
@@ -562,7 +562,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dodger_Stadium.jpg/1200px-Dodger_Stadium.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "user@tribu.fr",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Sorties"
@@ -576,7 +576,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://unioncowork.com/wp-content/uploads/2019/12/Copy-of-Union_1_HiRes-4-min.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "user@tribu.fr",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Co-Working"
@@ -590,7 +590,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "user@tribu.fr",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Activités",
@@ -604,7 +604,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://images.unsplash.com/photo-1581390114939-946f9a890a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80",
                 "status" => "",
                 "created_at" => "",
-                "user" => "user@tribu.fr",
+                "user" => "maggio.kyle@prohaska.org",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Activités",
@@ -618,7 +618,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "image" => "https://www.losangelesoffroad.com/wp-content/uploads/2019/02/Coachella-festival.jpg",
                 "status" => "",
                 "created_at" => "",
-                "user" => "user@tribu.fr",
+                "user" => "granville13@williamson.info",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Evénements",
@@ -630,7 +630,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "",
                 "address" => "Via degli Uffici del Vicario, 40, 00186 Roma",
                 "image" => "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                "user" => "edd.hyatt@kling.info",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Gastronomie",
@@ -641,7 +641,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Situé entre le Colisée et le Circus Maximus, le Forum est le site archéologique le plus important de Rome. Bâti sur le Mont Palatin, le Forum est la place principale de la Rome antique.",
                 "address" => "Via della Salara Vecchia, 5/6, 00186 Roma",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg",
-                "user" => "user@tribu.fr",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Culture",
@@ -654,7 +654,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-04-21",
                 "address" => "",
                 "image" => "https://images.rove.me/w_740,q_85/asqpclxdz0wrzv3zcykm/rome-natale-di-roma-or-romes-birthday.jpg",
-                "user" => "user@tribu.fr",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Evénements",
@@ -665,7 +665,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Depuis 1916 cette trattoria et pizzeria à l'ambiance intimiste, aux murs bordeaux décorés de fresques et d'arches en briques apparentes sert des plats typiques de la cuisine italienne et romaine",
                 "address" => "Via Ferruccio, 12/b/c, 00185 Roma",
                 "image" => "https://xdaysiny.com/wp-content/uploads/2019/09/Trattoria-Vecchia-Roma-Rome-best-Restaurant.jpg",
-                "user" => "user@tribu.fr",
+                "user" => "stokes.elouise@dach.com",
                 "city" => "Rome",
                 "categories" => [
                     "Gastronomie",
@@ -677,7 +677,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-10-05",
                 "address" => " 00120 Vatican City",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/7/73/God2-Sistine_Chapel.png",
-                "user" => "user@tribu.fr",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Activités",
@@ -688,7 +688,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Millepiani est le gagnant du prix Rome's Best Cowork, décerné par Coworker.com ! C'est un open space de 400 mètres carrés, qui comprend un espace événementiel (100 places et écran de projection), une salle de réunion (15 places avec écran plasma), et plusieurs bureaux pour startups et coworkers.",
                 "address" => "Via Nicolo Odero, 13, 00154 Roma",
                 "image" => "https://coworkingmap.org/wp-content/uploads/2016/12/a-millepiani1L-705x467.jpg",
-                "user" => "user@tribu.fr",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Co-Working",
@@ -700,7 +700,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-08-22",
                 "address" => "Viale dei Gladiatori, 00135 Roma",
                 "image" => "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt9d46c72d1c8d443b/60db4959ed93bb0fb198477e/a9d2077244811ea3de761399f5e55e1f920fdafc.png?quality=80&width=1000&format=pjpg&auto=webp",
-                "user" => "user@tribu.fr",
+                "user" => "qemard@dooley.com",
                 "city" => "Rome",
                 "categories" => [
                     "Sorties",
