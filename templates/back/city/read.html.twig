@@ -20,7 +20,7 @@
                 <th>Image</th>
                 <td>
                 {% if city.image != "" %}
-                    <img style="max-width:750px" src="{{ city.image }}" />
+                    <img style="max-width:100px" src="{{ city.image }}" />
                 {% else %}
                     <p>Pas d'image définie</p>
                 {% endif %}
@@ -43,7 +43,7 @@
     </table>
 
     <a class="btn btn-primary" href="{{ path('admin_city_update', {'id': city.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_city_list', {'id': city.id}) }}">Retour</a>
+    <a class="btn btn-success" href="{{ path('admin_city_list') }}">Retour</a>
 
     {{ include('back/city/_delete_form.html.twig') }}
     </div>
