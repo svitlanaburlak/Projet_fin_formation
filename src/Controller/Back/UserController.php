@@ -41,10 +41,11 @@ class UserController extends AbstractController
           
             $userRepository->add($user, true);
 
+            $this->addFlash('success', 'Utilisateur ajouté');
             return $this->redirectToRoute('admin_user_list', [], Response::HTTP_SEE_OTHER);
         }
 
-                return $this->renderForm('back/user/create.html.twig', [
+        return $this->renderForm('back/user/create.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
@@ -83,9 +84,10 @@ class UserController extends AbstractController
                 $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
                 $user->setPassword($hashedPassword);
             }
-
+            
             $userRepository->add($user, true);
 
+            $this->addFlash('warning', 'Utilisateur modifié');
             return $this->redirectToRoute('admin_user_list', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -104,6 +106,7 @@ class UserController extends AbstractController
             $userRepository->remove($user, true);
         }
 
+        $this->addFlash('danger', 'Utilisateur supprimé');
         return $this->redirectToRoute('admin_user_list', [], Response::HTTP_SEE_OTHER);
     }
 
