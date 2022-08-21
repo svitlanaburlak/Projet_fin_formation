@@ -4,12 +4,13 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class UserType extends AbstractType
 {
@@ -26,7 +27,10 @@ class UserType extends AbstractType
                     'Utilisateur' => 'ROLE_USER',
                 ],
                 "expanded" => true,
-                'mapped' => false,
+                //* to fix array to strin error can put multiple=true. it will make a checkbox not radio button.
+                //* or we can addTransformer for array $roles
+                // "multiple" => true
+                // 'mapped' => false,
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -50,6 +54,18 @@ class UserType extends AbstractType
                 'label' => 'Ville',
             ])
         ;
+
+        $builder->get('roles')
+        ->addModelTransformer(new CallbackTransformer(
+            function ($rolesArray) {
+                // transform the array to a string
+                return count($rolesArray)? $rolesArray[0]: null;
+            },
+            function ($rolesString) {
+                // transform the string back to an array
+                return [$rolesString];
+            }
+        ));
     }
 
     public function configureOptions(OptionsResolver $resolver): void
