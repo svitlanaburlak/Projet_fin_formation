@@ -169,7 +169,19 @@ class Post
         
     }
 
+    public function getDate2(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
     public function setDate(?\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function setDate2(?\DateTimeInterface $date): self
     {
         $this->date = $date;
 

@@ -7,6 +7,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,7 +22,7 @@ class PostType extends AbstractType
             ->add('title')
             ->add('image')
             ->add('content')
-            ->add('date', DateType::class,
+            ->add('date2', DateType::class,
                 [ 'label' => 'Date d\'événement',
                 'widget' => 'single_text',
                 'input' => 'datetime',
@@ -60,6 +61,18 @@ class PostType extends AbstractType
                     'required' => true] 
                 )
         ;
+
+        // $builder->get('date')
+        // ->addModelTransformer(new CallbackTransformer(
+        //     function ($dateToObject) {
+        //         // transform the string to a DateTime object
+        //         // return count($rolesArray)? $rolesArray[0]: null;
+        //     },
+        //     function ($dateTiString) {
+        //         // transform the DateTime object back to a string
+        //         // return $rolesString;
+        //     }
+        // ));
     }
 
     public function configureOptions(OptionsResolver $resolver): void
