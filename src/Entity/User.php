@@ -36,12 +36,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $roles = [];
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $password;
 
@@ -50,6 +52,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $firstname;
 
@@ -58,6 +61,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $lastname;
 
