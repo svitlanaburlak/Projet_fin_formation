@@ -56,7 +56,7 @@ class PostController extends AbstractController
 
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
-
+        $post->setStatus(1);
         $postRepo->add($post, true);
 
         return $this->json('OK', Response::HTTP_CREATED);
