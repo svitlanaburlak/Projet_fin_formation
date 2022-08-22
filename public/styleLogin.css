@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+body {
+    font-family: 'Anonymous Pro', monospace;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    
+}
+
+#connexion {
+    margin: 20px 0;
+    background-color: #004AAD;
+    border: 0;
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.text-form {
+    margin-bottom: 10px;
+}
+
+.submit_button {
+    text-align: center;
+}
+
+.title_backOffice {
+    font-size: 60px;
+    text-align: center;
+    background-color: #004AAD;
+    color: white;
+ 
+}
