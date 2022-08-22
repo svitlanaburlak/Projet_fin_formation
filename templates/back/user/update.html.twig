@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un User{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Modifier un User</h1>
+
+    {{ include('back/user/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+    <a class="btn btn-success" href="{{ path('admin_user_list') }}">Retour</a>
+</div>
+{% endblock %}

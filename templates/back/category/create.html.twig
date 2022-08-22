@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Catégorie{% endblock %}
+
+{% block body %}
+
+    <div class="d-flex justify-content-evenly">
+        <h1>Ajouter une nouvelle Catégorie</h1>
+    </div>
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+    <div class="container px-4">
+        {{ include('back/category/_form.html.twig') }}
+
+    </div>
+
+{% endblock %}
