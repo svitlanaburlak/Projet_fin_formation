@@ -53,11 +53,11 @@ class UserController extends AbstractController
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
       
-
+            
             $em->persist($user);
             $em->flush();
 
-        return $this->json('OK', Response::HTTP_CREATED);
+        return $this->json('Utilisateur ajouté', Response::HTTP_CREATED);
     }
 
     /**
@@ -110,7 +110,7 @@ class UserController extends AbstractController
 
         $em->flush();
 
-        return $this->json('OK', Response::HTTP_OK);
+        return $this->json('Utilisateur modifié', Response::HTTP_OK);
     }
 
 }
