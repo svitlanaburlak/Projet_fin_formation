@@ -16,7 +16,6 @@ class LoginController extends AbstractController
     {
         //$error = new CustomUserMessageAuthenticationException('Email ou mot de passe incorrect');
         $lastUsername = $authenticationUtils->getLastUsername();
-    
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
