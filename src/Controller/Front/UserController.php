@@ -85,6 +85,13 @@ class UserController extends AbstractController
     {
         $user = $userRepository->find($id);
 
+        // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
+        if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
+            if ($user !== $this->getUser()) {
+                return $this->json("Vous n'avez pas le droit de modifier cet utilisateur", 403);
+            }
+        }
+
         if ($user === null )
         {
             $errors = [ 
