@@ -53,11 +53,11 @@ class UserController extends AbstractController
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
       
-
+            
             $em->persist($user);
             $em->flush();
 
-        return $this->json('OK', Response::HTTP_CREATED);
+        return $this->json('Utilisateur ajouté', Response::HTTP_CREATED);
     }
 
     /**
@@ -85,6 +85,13 @@ class UserController extends AbstractController
     {
         $user = $userRepository->find($id);
 
+        // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
+        if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
+            if ($user !== $this->getUser()) {
+                return $this->json("Vous n'avez pas le droit de modifier cet utilisateur", 403);
+            }
+        }
+
         if ($user === null )
         {
             $errors = [ 
@@ -110,7 +117,7 @@ class UserController extends AbstractController
 
         $em->flush();
 
-        return $this->json('OK', Response::HTTP_OK);
+        return $this->json('Utilisateur modifié', Response::HTTP_OK);
     }
 
 }
