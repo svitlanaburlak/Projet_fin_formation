@@ -74,6 +74,7 @@ class Post
      * @ORM\Column(type="smallint", options={"default" : 1} )
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $status;
 
@@ -117,6 +118,7 @@ class Post
     public function __construct()
     {
         $this->category = new ArrayCollection();
+        $this->status = 1;
     }
 
     public function getId(): ?int

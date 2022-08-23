@@ -14,11 +14,10 @@ class LoginController extends AbstractController
      */
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
+        //$error = new CustomUserMessageAuthenticationException('Email ou mot de passe incorrect');
+        $lastUsername = $authenticationUtils->getLastUsername();
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('login/index.html.twig', [
             'last_username' => $lastUsername,
@@ -27,7 +26,7 @@ class LoginController extends AbstractController
 
     }
 
-        /**
+     /**
      * @Route("/logout", name="app_logout")
      */
     public function logout(): Response

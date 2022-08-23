@@ -56,10 +56,11 @@ class PostController extends AbstractController
 
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
-
+        $post->setStatus(1);
+        $post->setCreatedAt(new \DateTimeImmutable());
         $postRepo->add($post, true);
 
-        return $this->json('OK', Response::HTTP_CREATED);
+        return $this->json('Point d\'intérêt ajouté', Response::HTTP_CREATED);
     }
 
     /**
@@ -75,8 +76,16 @@ class PostController extends AbstractController
         ValidatorInterface $validator
         )
     {
+
         $post = $postRepository->find($id);
 
+        // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
+        if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
+            if ($post->getUser() !== $this->getUser()) {
+                return $this->json("Vous n'avez pas le droit de modifier ce point d'intérêt", 403);
+            }
+        }
+        
         if ($post === null )
         {
             $errors = [ 
@@ -100,8 +109,9 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
+        $post->setUpdatedAt(new \DateTimeImmutable());
         $em->flush();
 
-        return $this->json('OK', Response::HTTP_OK);
+        return $this->json('Point d\'intérêt modifié', Response::HTTP_OK);
     }
 }

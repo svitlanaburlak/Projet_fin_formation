@@ -92,7 +92,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->post = new ArrayCollection();
-        $this->setRoles(['ROLE_USER']);
+        $this->roles = array('ROLE_USER');
     }
 
     public function __toString() 
