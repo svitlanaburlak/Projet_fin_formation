@@ -18,7 +18,7 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $faker = \Faker\Factory::create();
+        $faker = \Faker\Factory::create('fr_FR');
         // to get always the same generated data
         $faker->seed(42);
         $nbUser = 15;
@@ -37,8 +37,8 @@ class UserFixtures extends Fixture
 
         $stdUser = new User();
         $stdUser->setEmail('user@tribu.fr');
-        $stdUser->setFirstname('User');
-        $stdUser->setLastname('Tribu');
+        $stdUser->setFirstname('Kiki');
+        $stdUser->setLastname('Le Fada');
         $stdUser->setPresentation('User presentation');
         $stdUser->setRoles(['ROLE_USER']);
 
