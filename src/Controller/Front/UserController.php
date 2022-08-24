@@ -57,7 +57,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-        return $this->json('Utilisateur ajouté', Response::HTTP_CREATED);
+        return $this->json(['Utilisateur ajouté', $user->getEmail()], Response::HTTP_CREATED);
     }
 
     /**
