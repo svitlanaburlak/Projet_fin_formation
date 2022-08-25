@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=opensans:500);
 
 body {
-    background: #8896f5;
+    background: #939292;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     max-height: 700px;
@@ -176,6 +176,20 @@ hr:after {
     -o-animation: moveclouds 20s linear infinite;
 }
 
+.x6 {
+    left: 500px;
+    top: 600px;
+
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.4);
+    opacity: 0.8;
+
+    -webkit-animation: moveclouds 20s linear infinite;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
+}
+
 @-webkit-keyframes moveclouds {
     0% {
         margin-left: 1000px;
@@ -209,6 +223,7 @@ hr:after {
 img {
     width: 800px;
     height: 800px;
+    margin-top: 60px;
 }
 
 .panel {
