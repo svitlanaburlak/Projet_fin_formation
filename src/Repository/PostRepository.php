@@ -54,6 +54,19 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByDate(): array
+    {
+         $entityManager = $this->getEntityManager();
+ 
+         $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Post p 
+            WHERE p.date < CURRENT_DATE()'
+         );
+ 
+         return $query->getResult();
+    }
+
 //    /**
 //     * @return Post[] Returns an array of Post objects
 //     */
