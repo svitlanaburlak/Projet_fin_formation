@@ -25,6 +25,13 @@ services:
         autoconfigure: true
         tags:
         - { name: serializer.normalizer }
+    App\EventListener\TokenListener:
+        tags:
+            -
+                # these are the options required to define the entity listener
+                name: kernel.event_listener
+                event: lexik_jwt_authentication.on_jwt_created
+                method: onJWTCreated
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
