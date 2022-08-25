@@ -29,7 +29,7 @@
                 <th>Adresse</th>
                 <th>Ville</th>
                 <th>Statut</th>
-                <th>Créé le</th>
+                <th>Date de l'évènement</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -46,7 +46,7 @@
                     {% else %}
                         inactif
                     {% endif %}</td>
-                <td>{{ post.createdAt}}</td>
+                <td>{{ post.date}}</td>
                 <td>
                     <a href="{{ path('admin_post_read', {'id': post.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
                     <a href="{{ path('admin_post_update', {'id': post.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
