@@ -38,18 +38,20 @@ class EventDateCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        // $arg1 = $input->getArgument('arg1');
+        $postList = $this->postRepo->findByDate();
+        // dd($postList);
 
-        $postList = $this->postRepo->findBy(['date'], [], $numberOfMoviesToUpdate);
-        if ($arg1) {
-            $io->note(sprintf('You passed an argument: %s', $arg1));
+        foreach ($postList as $post) {
+            
+            if($post->getStatus() == 1) {
+                $io->note('Le statut du post ' . $post->getId() . ' a été changé');
+                $post->setStatus(0);
+            }
+            
         }
 
-        if ($input->getOption('option1')) {
-            // ...
-        }
-
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $this->entityManager->flush();
+        $io->success('Ça marche');
 
         return Command::SUCCESS;
     }
