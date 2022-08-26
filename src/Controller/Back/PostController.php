@@ -2,10 +2,11 @@
 
 namespace App\Controller\Back;
 
+use DateTime;
 use App\Entity\Post;
 use App\Form\PostType;
-use App\Repository\PostRepository;
 use DateTimeImmutable;
+use App\Repository\PostRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,7 +38,7 @@ class PostController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $post->setCreatedAt(new DateTimeImmutable());
+            $post->setCreatedAt(new DateTime());
             $postRepo->add($post, true);
 
             $this->addFlash('success', 'Point d\'intérêt ajouté');
@@ -70,7 +71,7 @@ class PostController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $post->setUpdatedAt(new DateTimeImmutable());
+            $post->setUpdatedAt(new DateTime());
             $postRepo->add($post, true);
             
             $this->addFlash('warning', 'Point d\'intérêt modifié');
