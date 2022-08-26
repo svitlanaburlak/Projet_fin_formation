@@ -12,7 +12,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Validator\Constraints\File;
 
 class PostType extends AbstractType
 {
@@ -20,7 +22,18 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('image')
+            ->add('image', FileType::class,
+                    ['mapped' => false,
+                    'constraints' => [
+                        new File([
+                            // 'maxSize' => '1024k',
+                            // 'mimeTypes' => [
+                            //     'application/png',
+                            //     'application/jpg',
+                            // ],
+                            'mimeTypesMessage' => 'Please upload a valid image',
+                        ])
+                    ],])
             ->add('content')
             ->add('date2', DateType::class,
                 [ 'label' => 'Date d\'événement',
