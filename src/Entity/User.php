@@ -86,6 +86,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="users")
      * @Groups({"api_user_read"})
+     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $city;
 
