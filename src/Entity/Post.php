@@ -79,14 +79,14 @@ class Post
     private $status;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      * @Groups({"api_city_read"})
      * @Groups({"api_post_read"})
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -216,13 +216,13 @@ class Post
 
     public function getCreatedAt(): ?string
     {
-        return $this->createdAt->format('Y-m-d H:i:s');
+        return $this->createdAt->format('Y-m-d');
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
-
+        
         return $this;
     }
 
@@ -235,7 +235,7 @@ class Post
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
+    public function setUpdatedAt(?\DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
