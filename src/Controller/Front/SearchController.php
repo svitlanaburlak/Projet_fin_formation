@@ -20,7 +20,7 @@ class SearchController extends AbstractController
     {
         $this->slugger = $slugger;
     }
-    
+
     /**
      * @Route("/{slug}", name="api_search", methods={"GET"})
      * @return Response
@@ -29,6 +29,12 @@ class SearchController extends AbstractController
     {
         $cityToSearch = $this->slugger->slug(strtolower($slug));
         $city = $cityRepo->findBySlug($cityToSearch);
+
+        if (empty($city))
+        {
+            // if city is not found, we return 404
+            return $this->json('No city found with name ' . $slug, Response::HTTP_NOT_FOUND);
+        }
 
         return $this->json($city, 200, [], ['groups' => 'api_city_read']);
     }
