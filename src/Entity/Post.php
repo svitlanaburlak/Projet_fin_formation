@@ -21,6 +21,7 @@ class Post
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
@@ -30,6 +31,7 @@ class Post
     /**
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
@@ -40,6 +42,7 @@ class Post
     /**
      * @ORM\Column(type="string", length=2048, nullable=true)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
@@ -49,6 +52,7 @@ class Post
     /**
      * @ORM\Column(type="text")
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_category_post"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
@@ -58,6 +62,7 @@ class Post
     /**
      * @ORM\Column(type="datetime", nullable=true)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      */
     private $date;
@@ -65,6 +70,7 @@ class Post
     /**
      * @ORM\Column(type="string", length=128)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
@@ -73,26 +79,29 @@ class Post
     /**
      * @ORM\Column(type="smallint", options={"default" : 1} )
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $status;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      */
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="posts")
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      */
     private $category;
@@ -100,6 +109,7 @@ class Post
     /**
      * @ORM\ManyToOne(targetEntity=City::class, inversedBy="posts")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_category_post"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
@@ -110,6 +120,7 @@ class Post
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="post")
      * @ORM\JoinColumn(nullable=true)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
@@ -216,13 +227,13 @@ class Post
 
     public function getCreatedAt(): ?string
     {
-        return $this->createdAt->format('Y-m-d H:i:s');
+        return $this->createdAt->format('Y-m-d');
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt): self
     {
         $this->createdAt = $createdAt;
-
+        
         return $this;
     }
 
@@ -235,7 +246,7 @@ class Post
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
+    public function setUpdatedAt(?\DateTime $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 

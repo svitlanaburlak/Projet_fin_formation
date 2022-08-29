@@ -57,7 +57,7 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
         $post->setStatus(1);
-        $post->setCreatedAt(new \DateTimeImmutable());
+        $post->setCreatedAt(new \DateTime());
         $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt ajouté', Response::HTTP_CREATED);
@@ -109,9 +109,18 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-        $post->setUpdatedAt(new \DateTimeImmutable());
+        $post->setUpdatedAt(new \DateTime());
         $em->flush();
 
         return $this->json('Point d\'intérêt modifié', Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/posts", name="list", methods={"GET"})
+     */
+    public function list(PostRepository $postRepo): Response
+    {
+        $postList = $postRepo->findAll(); 
+        return $this->json($postList, 200, [], ['groups' => 'api_post_list']);
     }
 }

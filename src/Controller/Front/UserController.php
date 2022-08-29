@@ -5,14 +5,15 @@ namespace App\Controller\Front;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
     /**
      * @Route("/api", name="api_user_")
@@ -57,25 +58,26 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-        return $this->json(['Utilisateur ajouté', $user->getEmail()], Response::HTTP_CREATED);
+        return $this->json([$user->getId(), $user->getEmail()], Response::HTTP_CREATED);
     }
 
     /**
-     * @Route("/users/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
+     * @Route("/users", name="read", methods={"GET"})
      */
 
-    public function read(UserRepository $userRepo, int $id): Response
+    public function read(Security $security): Response
     {
-        $user = $userRepo->find($id);
+        // $user = $userRepo->find($id);
+        $user = $security->getUser();
         return $this->json($user, 200, [], ['groups' => 'api_user_read']);
     }
 
      /**
-     * @Route("/users/{id<\d+>}", name="update", methods="PATCH", requirements={"id"="\d+"})
+     * @Route("/users", name="update", methods="PATCH")
      * @return Response
      */
     public function update(
-        $id,
+        Security $security,
         EntityManagerInterface $em, 
         UserRepository $userRepository,
         Request $request, 
@@ -83,7 +85,7 @@ class UserController extends AbstractController
         ValidatorInterface $validator
         )
     {
-        $user = $userRepository->find($id);
+        $user = $security->getUser();
 
         // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
         if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
@@ -96,7 +98,7 @@ class UserController extends AbstractController
         {
             $errors = [ 
                 'error' => true,
-                'message' => 'No user found for id [' . $id . ']'
+                'message' => 'No user found'
             ];
             $errorsString = (string) $errors;
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);

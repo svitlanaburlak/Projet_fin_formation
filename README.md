@@ -30,3 +30,5 @@ Démarrez votre nouvelle vie !
   - `bin/console doctrine:database:create`
   - `bin/console doctrine:migrations:migrate`
   - `bin/console doctrine:fixtures:load`
+4. Lancer JWT token avec la commande qui genere les clés SSL
+  - `bin/console lexik:jwt:generate-keypair`

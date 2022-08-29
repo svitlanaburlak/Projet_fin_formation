@@ -4,8 +4,8 @@ namespace App\DataFixtures;
 
 use App\Entity\City;
 use App\Entity\Post;
-use DateTimeImmutable;
 use App\Entity\Category;
+use DateTime;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -708,7 +708,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 ],
             ]
         ];
-
+        $faker = \Faker\Factory::create();
         //=============================POST
         $postObjArray = [];
         foreach ($posts as $currentPost) 
@@ -718,7 +718,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             $postObj->setTitle($currentPost["title"]);
             $postObj->setContent($currentPost["content"]);
             if(!empty($currentPost["date"])) {
-                $postObj->setDate(new DateTimeImmutable($currentPost["date"])); 
+                $postObj->setDate(new DateTime($currentPost["date"])); 
             }
             else {
                 $postObj->setDate(null);
@@ -727,7 +727,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             $postObj->setAddress($currentPost["address"]);
             $postObj->setImage($currentPost["image"]);
             $postObj->setStatus(1);
-            $postObj->setCreatedAt(new DateTimeImmutable);
+            $postObj->setCreatedAt($faker->dateTimeBetween('-4 week', '+1 week'));
             
             foreach ($currentPost["categories"] as $currentCategoryName) {
 
