@@ -38,6 +38,15 @@ class PostController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $post->setCreatedAt(new DateTime());
+
+            //! if user doesnt provide URl for image, it will set image of the city
+            $city = $post->getCity();
+            if(!$post->getImage())
+            {
+                $post->setImage($city->getImage());
+            }
+            //!========
+
             $postRepo->add($post, true);
 
             $this->addFlash('success', 'Point d\'intérêt ajouté');
