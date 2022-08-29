@@ -39,6 +39,21 @@ class CityRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return City[] Returns an array of City objects
+     */
+    public function findBySlug($slug): array
+    {
+        $entityManager = $this->getEntityManager();
+ 
+        $query = $entityManager->createQuery(
+            'SELECT c
+            FROM App\Entity\City c 
+            WHERE c.slug = :slug'
+        )->setParameter('slug', $slug);
+ 
+        return $query->getResult();
+    }
 //    /**
 //     * @return City[] Returns an array of City objects
 //     */
