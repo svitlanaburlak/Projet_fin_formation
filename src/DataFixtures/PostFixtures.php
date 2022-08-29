@@ -4,7 +4,6 @@ namespace App\DataFixtures;
 
 use App\Entity\City;
 use App\Entity\Post;
-use DateTimeImmutable;
 use App\Entity\Category;
 use DateTime;
 use Doctrine\Persistence\ObjectManager;
@@ -719,7 +718,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             $postObj->setTitle($currentPost["title"]);
             $postObj->setContent($currentPost["content"]);
             if(!empty($currentPost["date"])) {
-                $postObj->setDate(new DateTimeImmutable($currentPost["date"])); 
+                $postObj->setDate(new DateTime($currentPost["date"])); 
             }
             else {
                 $postObj->setDate(null);

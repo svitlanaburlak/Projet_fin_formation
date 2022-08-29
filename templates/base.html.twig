@@ -21,11 +21,10 @@
 
     <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
         <div class="container-fluid">
                     <a href="{{ path('admin_home')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
-                    <img src="{{ asset('logo.png') }}" height="50" alt="Tribu Logo">
-                    <span class="header-logo__title">BackOffice</span>
+                    <img class="tribu_logo" src="{{ asset('logo.png') }}" height="80" alt="Tribu Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
@@ -34,22 +33,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ path('admin_home')}}">Accueil</a>
+                            <a class="nav-link" href="{{ path('admin_home')}}"><img class="nav-pics" src="{{ asset('home.png') }}">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_city_list')}}"><i class="bi bi-bookmark"></i>Villes</a>
+                            <a class="nav-link" href="{{ path('admin_city_list')}}"><img class="nav-pics" src="{{ asset('office.png') }}">Villes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_user_list')}}"><i class="bi bi-bookmark"></i>Utilisateurs</a>
+                            <a class="nav-link" href="{{ path('admin_user_list')}}"><img class="nav-pics" src="{{ asset('group.png') }}">Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_post_list')}}"><i class="bi bi-bookmark"></i>Points d'intérêts</a>
+                            <a class="nav-link" href="{{ path('admin_post_list')}}"><img class="nav-pics" src="{{ asset('pin.png') }}">Points d'intérêts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_category_list')}}"><i class="bi bi-bookmark"></i>Catégories</a>
+                            <a class="nav-link" href="{{ path('admin_category_list')}}"><img class="nav-pics" src="{{ asset('categories.png') }}">Catégories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://tribu.surge.sh/"><i class="bi bi-bookmark"></i>Tribu Front</a>
+                            <a class="nav-link" href="https://tribu.surge.sh/"><img class="nav-pics" src="{{ asset('airplane.png') }}">Tribu Front</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -81,9 +80,9 @@
                     </ul>
 
                     {% if app.user is defined and app.user is not null %}
-                        <a href="{{ path('app_logout') }}" type="button" class="btn btn-danger me-2">Déconnexion</a>
+                        <a href="{{ path('app_logout') }}" type="button" class="btn custom me-2">Déconnexion</a>
                     {% else %}
-                        <a href="{{ path('app_login') }}" type="button" class="btn btn-danger me-2">Connexion</a>
+                        <a href="{{ path('app_login') }}" type="button" class="btn custom me-2">Connexion</a>
                     {% endif %}
                     
                 </div>
