@@ -49,6 +49,7 @@ security:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/(cities|posts)/\d+, roles: PUBLIC_ACCESS }
+        - { path: ^/api/categories, roles: PUBLIC_ACCESS }
         - { path: ^/api/cities, roles: PUBLIC_ACCESS }
         - { path: ^/api/users/\d+, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/users, roles: PUBLIC_ACCESS }
