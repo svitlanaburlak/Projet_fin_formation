@@ -53,7 +53,8 @@ security:
         - { path: ^/api/users/\d+, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/api/users, roles: PUBLIC_ACCESS }
         # - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api/posts, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/posts, roles: PUBLIC_ACCESS, methods: GET }
+        - { path: ^/api/posts, roles: IS_AUTHENTICATED_FULLY, methods: POST }
         
 
 when@test:
