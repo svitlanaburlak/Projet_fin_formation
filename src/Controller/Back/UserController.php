@@ -38,6 +38,16 @@ class UserController extends AbstractController
             $passwordClear = $user->getPassword();
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
+
+            //! to add random avatar with 
+            $faker = \Faker\Factory::create();
+            $avataaar = new \Avataaar\Avataaar();
+            $faker->addProvider(new \Avataaar\FakerProvider($faker));
+            if(empty($user->getImage())) 
+            {
+               $user->setImage($faker->avataaar); 
+            }
+            //!======================
           
             $userRepository->add($user, true);
 
