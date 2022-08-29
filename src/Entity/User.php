@@ -50,6 +50,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
@@ -59,6 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=64)
      * @Groups({"api_city_read"})
+     * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
