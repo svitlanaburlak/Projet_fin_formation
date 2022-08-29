@@ -603,6 +603,10 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             ]
         ];
         $faker = \Faker\Factory::create();
+
+        // to add random avatar with 
+        $avataaar = new \Avataaar\Avataaar();
+        $faker->addProvider(new \Avataaar\FakerProvider($faker));
         //=============================POST
         $postObjArray = [];
         foreach ($posts as $currentPost) 
@@ -634,6 +638,9 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
 
             $userObj = $this->getReference($currentPost["user"]);
             $userObj->setCity($cityObj);
+            // to create fake avatar
+            $userObj->setImage($faker->avataaar);
+
             $postObj->setUser($userObj);
 
             $manager->persist($postObj);

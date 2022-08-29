@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af86a801f76a9e5f9973840d7da98cc6",
+    "content-hash": "04d2f9d4250589698b16b02ca12567cd",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1523,6 +1523,53 @@
                 }
             ],
             "time": "2022-05-05T09:31:05+00:00"
+        },
+        {
+            "name": "johnciacia/avataaar",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnciacia/avataaar-php.git",
+                "reference": "4aae7fab9938bcd357a137182e55a41711b1d5d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnciacia/avataaar-php/zipball/4aae7fab9938bcd357a137182e55a41711b1d5d4",
+                "reference": "4aae7fab9938bcd357a137182e55a41711b1d5d4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Avataaar\\LaravelProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Avataaar\\": "src/",
+                    "Johnciacia\\Avataaar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Ciacia",
+                    "email": "hi@johnciacia.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/johnciacia/avataaar-php/issues",
+                "source": "https://github.com/johnciacia/avataaar-php/tree/1.1.0"
+            },
+            "time": "2022-02-27T09:28:23+00:00"
         },
         {
             "name": "laminas/laminas-code",
