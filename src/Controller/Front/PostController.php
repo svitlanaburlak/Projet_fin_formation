@@ -58,6 +58,15 @@ class PostController extends AbstractController
         }
         $post->setStatus(1);
         $post->setCreatedAt(new \DateTime());
+        
+        //! if user doesnt provide URl for image, it will set image of the city
+        $city = $post->getCity();
+        if(!$post->getImage())
+        {
+            $post->setImage($city->getImage());
+        }
+        //!========
+
         $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt ajouté', Response::HTTP_CREATED);
