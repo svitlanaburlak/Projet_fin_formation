@@ -23,6 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_list"})
      */
     private $id;
 
@@ -53,6 +54,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_list"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $firstname;
@@ -63,6 +65,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
      * @Groups({"api_user_read"})
+     * @Groups({"api_category_list"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $lastname;
