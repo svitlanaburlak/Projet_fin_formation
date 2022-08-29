@@ -15,20 +15,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SearchController extends AbstractController
 { 
     private $slugger;
+    private $cityRepo;
 
-    public function __construct(SluggerInterface $slugger)
+    public function __construct(SluggerInterface $slugger, CityRepository $cityRepository)
     {
         $this->slugger = $slugger;
+        $this->cityRepo = $cityRepository;
     }
 
     /**
      * @Route("/{slug}", name="api_search", methods={"GET"})
      * @return Response
      */
-    public function search($slug, CityRepository $cityRepo): Response
+    public function search($slug): Response
     {
         $cityToSearch = $this->slugger->slug(strtolower($slug));
-        $city = $cityRepo->findBySlug($cityToSearch);
+        $city = $this->cityRepo->findBySlug($cityToSearch);
 
         if (empty($city))
         {

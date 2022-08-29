@@ -42,7 +42,7 @@ class CityRepository extends ServiceEntityRepository
     /**
      * @return City[] Returns an array of City objects
      */
-    public function findByExampleField($slug): array
+    public function findBySlug($slug): array
     {
         $entityManager = $this->getEntityManager();
  
@@ -50,7 +50,7 @@ class CityRepository extends ServiceEntityRepository
             'SELECT c
             FROM App\Entity\City c 
             WHERE c.slug = :slug'
-        );
+        )->setParameter('slug', $slug);
  
         return $query->getResult();
     }
