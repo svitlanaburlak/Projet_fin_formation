@@ -50,7 +50,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "title" => "Mayer, délicieuse boulangerie française",
                 "content" => "Le pain français vous manque? On a trouvé la boulangerie qui va vous faire du bien au coeur et aux papilles. On retrouve la qualité française du pain tradition mais aussi les brioches feuilletées, les croissants et autres pâtisseries d'une qualité irréprochable ! Nous y allons une fois pas semaine car les prix sont quand même élevés. Mais bon, qui dit qualité française dit prix français. Vous pouvez y aller les yeux fermés !",
                 "address" => "Carrer Del Diluvi 11, 08012 Barcelona",
-                "image" => "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+                "image" => "https://cdn.pixabay.com/photo/2016/03/27/21/59/bread-1284438_960_720.jpg",
                 "user" => "vbernier@laposte.net",
                 "city" => "Barcelone",
                 "categories" => [
@@ -271,7 +271,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "title" => "Mzansi - Le restaurant typique Africain",
                 "content" => "Dans un quartier du township Langa ce petit restaurant nous invite a vivre une expérience unique: Le buffet a volonté délicieux. La musique live. Un artiste du quartier et ses peintures. Le récit de Mama. Le tout dans une ambiance plus que conviviale. Très agréable soirée en perspective avec des personnes venus des quatres coins du monde.",
                 "address" => "45 Harlem Avenue Langa, Le Cap 7455 Afrique du Sud",
-                "image" => "https://images.unsplash.com/photo-1589442305595-62647c1514f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80",
+                "image" => "https://media.istockphoto.com/photos/beef-stew-picture-id658496398?k=20&m=658496398&s=612x612&w=0&h=iZSpC7ho5a_OLiqqlepsgShLyHD5abBLmUdEgyPss2A=",
                 "user" => "vincent96@thibault.com",
                 "city" => "Le Cap",
                 "categories" => [
@@ -354,7 +354,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "La fameuse Tea party à l'Anglaise, comme on se l'imagine dans les films et les livres. Ils accentuent très certainement le style British pour coller au stéréotype, mais c'est ça qu'on aime aussi dans les Tea party, non? Leurs gâteaux ne sont pas top (c'est Anglais, quoi...) mais leurs thés sont excellents!",
                 "date" => "2022-09-09 17:00:00",
                 "address" => "The Savoy, The Strand, London WC2R 0EU",
-                "image" => "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=721&q=80",
+                "image" => "https://cdn.pixabay.com/photo/2017/04/05/01/16/food-2203732_960_720.jpg",
                 "user" => "gbigot@fouquet.fr",
                 "city" => "Londres",
                 "categories" => [
@@ -367,7 +367,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "title" => "L’exposition Harry Potter aux studios Warner Bros.",
                 "content" => "Si vous êtes fan des aventures de Harry Potter, rendez-vous dans les studios de la Warner Bros. Vous arpenterez les décors et découvrirez tous les secrets des tournages. Passionnant !",
                 "address" => "Warner Bros. Studio Tour London, Studio Tour Dr, Leavesden, Watford WD25 7LR",
-                "image" => "https://images.unsplash.com/photo-1575887339850-1acc9d8daf3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                "image" => "https://images-ext-1.discordapp.net/external/AQeGsor4CBwu2VJHGZLzY17DpQ0kJyGBTeIsnsEPTdk/https/cdn.pixabay.com/photo/2016/09/02/22/59/harry-potter-1640525_960_720.jpg",
                 "user" => "zchretien@descamps.com",
                 "city" => "Londres",
                 "categories" => [
@@ -392,7 +392,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 Il y aura plein de bonnes choses à déguster : mousseline d'escargot sur lit de pattes d'araignées, omelettes d'oeufs de fourmis, gâteaux de pissenlits aux cloportes, le tout arrosé d'un jus de crapauds millésimé. Connaissant ton amour de la gastronomie, j'ai pensé que cela pouvait t\'intéresser. Ca te fera une bonne occasion de sortir de ton cercueil !",
                 "date" => "2022-10-31 21:00:00",
                 "address" => "49 Dean Street, Londres W1D 5BG",
-                "image" => "https://images.unsplash.com/photo-1572006234180-72c98e5f7f5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+                "image" => "https://media.istockphoto.com/photos/making-memories-on-halloween-party-picture-id845970870?k=20&m=845970870&s=612x612&w=0&h=WUAQ13G8V47eJ4kstcfPUsjXljLIOSssyKNmsO_j6sw=",
                 "user" => "meunier.franck@ribeiro.org",
                 "city" => "Londres",
                 "categories" => [
@@ -405,8 +405,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "title" => "Jeux d’évasion: 'Sherlock : The Game is Now'",
                 "content" => "La sortie de « Sherlock : The Game is Now » fut un événement dans le monde des jeux d’évasion grandeur nature. Produit dérivé officiel de la série « Sherlock », cet escape game londonien est devenu, en décembre 2018, le premier à exploiter une licence de manière pérenne.",
                 "address" => "Shepherd's Bush Green, London W12 8PP",
-                "image" => "https://images.unsplash.com/photo-1621502822601-b84996c82b79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80 ",
-                "user" => "georges.leclercq@berger.org",
+                "image" => "https://media.istockphoto.com/photos/detecrive-or-investigation-concept-tools-on-the-wood-table-picture-id513541610?k=20&m=513541610&s=612x612&w=0&h=9Ie2P34lXK7sjgrFALPk5HAHjSVb9gpqiPa59cSLMxY=",
                 "city" => "Londres",
                 "categories" => [
                     "Sorties",
