@@ -531,7 +531,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "title" => "Forum Romain",
                 "content" => "Situé entre le Colisée et le Circus Maximus, le Forum est le site archéologique le plus important de Rome. Bâti sur le Mont Palatin, le Forum est la place principale de la Rome antique.",
                 "address" => "Via della Salara Vecchia, 5/6, 00186 Roma",
-                "image" => "https://upload.wikimedia.org/wikipedia/commons/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg",
+                "image" => "https://cdn.pixabay.com/photo/2014/09/23/16/56/forum-457909_960_720.jpg",
                 "user" => "leconte.corinne@lucas.org",
                 "city" => "Rome",
                 "categories" => [
