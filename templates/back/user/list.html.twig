@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-evenly">
         <h1>Utilisateurs</h1>
         <div class="d-flex align-items-center">        
-            <a href="{{ path('admin_user_create') }}"class="btn btn-sm btn-success px-5" title="Ajouter"><i class="bi bi-plus-circle"></i> Ajouter</a>
+            <a href="{{ path('admin_user_create') }}"class="button-add" title="Ajouter"><i class="bi bi-plus-circle"></i> Ajouter</a>
         </div>
     </div>
     
@@ -52,8 +52,12 @@
                 </td>
                 <td>{{ user.city }}</td>
                 <td>
-                    <a href="{{ path('admin_user_read', {'id': user.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
-                    <a href="{{ path('admin_user_update', {'id': user.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <div class="all-button">
+                        <a href="{{ path('admin_user_read', {'id': user.id}) }}" class="button-read-small"
+                            title="Afficher"><i class="bi bi-three-dots"></i></a>
+                        <a href="{{ path('admin_user_update', {'id': user.id}) }}" class="button-update-small"
+                            title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    </div>
                 </td>
             </tr>
             {% else %}
