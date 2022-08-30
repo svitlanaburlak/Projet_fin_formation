@@ -44,20 +44,20 @@ class PostController extends AbstractController
             if($uploadedImage) {
                 $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
                 $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
+
+                try {
+                    $uploadedImage->move(
+                        $this->getParameter('kernel.project_dir').'/public/post_image', 
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+    
+                //todo how to make th URL of the server
+                $post->setImage('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/post_image/'. $newFilename);
             }
 
-            try {
-                $uploadedImage->move(
-                    $this->getParameter('kernel.project_dir').'/public/post_image', 
-                    $newFilename
-                );
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
-            }
-
-            //todo how to make th URL of the server
-            $post->setImage('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/post_image/'. $newFilename);
-            
             $post->setCreatedAt(new DateTime());
             //! if user doesnt provide URl for image, it will set image of the city
             $city = $post->getCity();
