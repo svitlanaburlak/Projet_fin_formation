@@ -18,7 +18,12 @@ class CategoryController extends AbstractController
      */
     public function listWithCity(CategoryRepository $categoryRepo, int $id, int $city_id): Response
     {
-        $category = $categoryRepo->find($id); 
+        $category = $categoryRepo->find($id);
+        if ($category === null )
+        { 
+            return $this->json('No category found with id ' . $id, Response::HTTP_NOT_FOUND);        
+        }
+        
         $postList = $categoryRepo->findByCategory($city_id, $id);
         return $this->json($postList, 200, [], ['groups' => 'api_category_post']);
     }
