@@ -22,6 +22,7 @@
 .tribu_logo {
     width: 300px;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .custom {
@@ -29,4 +30,15 @@
     color: white;
 }
 
+.tribu_punchline {
+    width: 50vw;
+    height: auto;
+}
 
+.btn-add {
+    background-color: #7e049c;
+    padding: 3px 50px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+}
