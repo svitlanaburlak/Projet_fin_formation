@@ -56,7 +56,7 @@ class PostController extends AbstractController
             }
 
             //todo how to make th URL of the server
-            $post->setImage( 'https://pierre-henri-kocan-server.eddi.cloud/public/post_image/'. $newFilename);
+            $post->setImage( 'https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/post_image/'. $newFilename);
             
             $post->setCreatedAt(new DateTime());
             $postRepo->add($post, true);
