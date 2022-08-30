@@ -407,6 +407,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "address" => "Shepherd's Bush Green, London W12 8PP",
                 "image" => "https://media.istockphoto.com/photos/detecrive-or-investigation-concept-tools-on-the-wood-table-picture-id513541610?k=20&m=513541610&s=612x612&w=0&h=9Ie2P34lXK7sjgrFALPk5HAHjSVb9gpqiPa59cSLMxY=",
                 "city" => "Londres",
+                "user" => "georges.leclercq@berger.org",
                 "categories" => [
                     "Sorties",
                     "Activités"
