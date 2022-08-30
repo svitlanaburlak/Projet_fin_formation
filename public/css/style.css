@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #7e049cc5;
+    background-color: #04839c;
 }
 
 .nav-pics {
@@ -9,11 +9,20 @@
     margin-left: 15px;
 }
 
-.tribu_logo {
+.tribu_logo_nav {
     margin: 5px 30px 5px 10px;
+    width: 50px;
+    height: auto;
+}
+
+.tribu_logo {
+    width: 200px;
+    height: auto;
 }
 
 .custom {
     background-color: #e404a4;
     color: white;
 }
+
+

@@ -12,7 +12,7 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Our custom CSS -->
-    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- favicon -->
     <link rel="shortcut icon" href="" type="image/x-icon">
 
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark mb-4">
         <div class="container-fluid">
                     <a href="{{ path('admin_home')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo">
-                    <img class="tribu_logo" src="{{ asset('logo.png') }}" height="80" alt="Tribu Logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Tribu Logo" class="tribu_logo_nav">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent">
@@ -33,22 +33,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_home')}}"><img class="nav-pics" src="{{ asset('home.png') }}">Accueil</a>
+                            <a class="nav-link" href="{{ path('admin_home')}}"><img class="nav-pics" src="{{ asset('images/home.png') }}">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_city_list')}}"><img class="nav-pics" src="{{ asset('office.png') }}">Villes</a>
+                            <a class="nav-link" href="{{ path('admin_city_list')}}"><img class="nav-pics" src="{{ asset('images/office.png') }}">Villes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_user_list')}}"><img class="nav-pics" src="{{ asset('group.png') }}">Utilisateurs</a>
+                            <a class="nav-link" href="{{ path('admin_user_list')}}"><img class="nav-pics" src="{{ asset('images/group.png') }}">Utilisateurs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_post_list')}}"><img class="nav-pics" src="{{ asset('pin.png') }}">Points d'intérêts</a>
+                            <a class="nav-link" href="{{ path('admin_post_list')}}"><img class="nav-pics" src="{{ asset('images/pin.png') }}">Points d'intérêts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin_category_list')}}"><img class="nav-pics" src="{{ asset('categories.png') }}">Catégories</a>
+                            <a class="nav-link" href="{{ path('admin_category_list')}}"><img class="nav-pics" src="{{ asset('images/categories.png') }}">Catégories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://tribu.surge.sh/"><img class="nav-pics" src="{{ asset('airplane.png') }}">Tribu Front</a>
+                            <a class="nav-link" href="https://tribu.surge.sh/"><img class="nav-pics" src="{{ asset('images/airplane.png') }}">Tribu Front</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
