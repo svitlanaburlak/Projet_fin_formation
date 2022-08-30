@@ -25,10 +25,11 @@ class PostController extends AbstractController
     public function read(PostRepository $postRepo, int $id): Response
     {
         $post = $postRepo->find($id);
-        // var_dump($post);
-        // $date=$post->getDate();
-        // var_dump($date);
-        // die;
+        if ($post === null )
+        { 
+            return $this->json('No post found with id ' . $id, Response::HTTP_NOT_FOUND);        
+        }
+
         return $this->json($post, 200, [], ['groups' => 'api_post_read']);
     }
 
@@ -57,7 +58,16 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
         $post->setStatus(1);
-        $post->setCreatedAt(new \DateTimeImmutable());
+        $post->setCreatedAt(new \DateTime());
+        
+        //! if user doesnt provide URl for image, it will set image of the city
+        $city = $post->getCity();
+        if(!$post->getImage())
+        {
+            $post->setImage($city->getImage());
+        }
+        //!========
+
         $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt ajouté', Response::HTTP_CREATED);
@@ -109,9 +119,18 @@ class PostController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-        $post->setUpdatedAt(new \DateTimeImmutable());
+        $post->setUpdatedAt(new \DateTime());
         $em->flush();
 
         return $this->json('Point d\'intérêt modifié', Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/posts", name="list", methods={"GET"})
+     */
+    public function list(PostRepository $postRepo): Response
+    {
+        $postList = $postRepo->findAll(); 
+        return $this->json($postList, 200, [], ['groups' => 'api_post_list']);
     }
 }

@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #04839c;
+}
+
+.nav-pics {
+    width: 40px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.nav-item {
+    padding-top: 15px;
+}
+
+.tribu_logo_nav {
+    margin: 0px 30px 0px 10px;
+    width: 200px;
+    height: auto;
+}
+
+.tribu_logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.custom {
+    background-color: #e404a4;
+    color: white;
+}
+
+.tribu_punchline {
+    width: 50vw;
+    height: auto;
+}
+
+.btn-add {
+    background-color: #7e049c;
+    padding: 3px 50px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+}

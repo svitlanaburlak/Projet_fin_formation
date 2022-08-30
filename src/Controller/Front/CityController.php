@@ -29,6 +29,13 @@ class CityController extends AbstractController
     public function read(CityRepository $cityRepo, int $id): Response
     {
         $city = $cityRepo->find($id); 
+
+        if ($city === null)
+        {
+            // if city is not found, we return 404
+            return $this->json('No city found with id ' . $id, Response::HTTP_NOT_FOUND);
+        }
+
         return $this->json($city, 200, [], ['groups' => 'api_city_read']);
     }
 }
