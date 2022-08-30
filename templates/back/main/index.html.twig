@@ -1,49 +1,50 @@
 {% extends 'base.html.twig' %}
 {% block title %}Backoffice{% endblock %}
 {% block body %}
-    <!-- main -->
-    <div class="my-5 py-5 text-center">
-        <img src="{{ asset('logo.png') }}" height="100" alt="Logo Tribu" class="mb-3">
-        <h1 class="display-6 fw-bold">Bienvenue dans Backoffice de Tribu</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4 text-muted">Meet, Visit, Share it, Repeat!</p>
-        </div>
+<!-- main -->
+<div class="my-3 py-3 text-center">
+    <img src="{{ asset('images/logo-back.png') }}" alt="Tribu Logo" class="tribu_logo">
+    <h1 class="display-6 fw-bold">Bienvenue dans le Backoffice de Tribu</h1>
+    <div class="col-lg-6 mx-auto">
+        <!-- <p class="lead mb-4 text-muted">Meet, Visit, Share it, Repeat!</p> -->
+        <img src="{{ asset('images/punchline.png') }}" alt="Tribu punchline" class="tribu_punchline">
     </div>
-    <div class="container-xl bg-light p-5 border-top">
-            
-            <div class="col-12 col-lg-9 " style="width: 100%;">
+</div>
+<div class="container-xl bg-light p-5 border-top">
 
-                <div class="d-flex justify-content-evenly flex-wrap">
- 
-                    <div class="card text-center m-3" style="width: 20rem;">
-                        <h1><img src="{{ city.image }}" alt="City image" width="100%" height="90%"></h1>
-                        <div class="card-body">
-                            <p class="card-text"><a href="{{ path('admin_city_list')}}" class="text-decoration-none">Vous pouvez modifier les villes</a></p>
-                        </div>
-                    </div>
-                
-                    <div class="card text-center m-3" style="width: 20rem;">
-                        <h1><img src="{{ city.image }}" alt="Post image" width="100%" height="90%"></h1>
-                        <div class="card-body">
-                            <p class="card-text"><a href="{{ path('admin_post_list')}}" class="text-decoration-none">Vous pouvez modifier les points d'intérêt</a></p>
-                        </div>
-                    </div>
+    <div class="col-12 col-lg-9" style="width: 100%;">
 
-                    <div class="card text-center m-3" style="width: 20rem;">
-                        <h1><img src="{{ post.image }}" alt="Post image" width="100%" height="90%"></h1>
-                        <div class="card-body">
-                            <p class="card-text"><a href="{{ path('admin_category_list')}}" class="text-decoration-none">Vous pouvez modifier les categories</a></p>
-                        </div>
-                    </div>
+        <div class="d-flex justify-content-evenly flex-wrap">
 
-                    <div class="card text-center m-3" style="width: 20rem;">
-                        <h1><img src="{{ post.image }}" alt="City image" width="100%" height="90%"></h1>
-                        <div class="card-body">
-                            <p class="card-text"><a href="{{ path('admin_user_list')}}" class="text-decoration-none">Vous pouvez modifier les utilisateurs</a></p>
-                        </div>
-                    </div>
-
+            <div class="card text-center m-3" style="width: 20rem;">
+                <h1><img src="{{ city.image }}" alt="City image" width="100%" height="90%"></h1>
+                <div class="card-body">
+                    <p class="card-text"><a href="{{ path('admin_city_list')}}" class="text-decoration-none">Vous pouvez modifier les villes</a></p>
                 </div>
             </div>
+
+            <div class="card text-center m-3" style="width: 20rem;">
+                <h1><img src="{{ city.image }}" alt="Post image" width="100%" height="90%"></h1>
+                <div class="card-body">
+                    <p class="card-text"><a href="{{ path('admin_post_list')}}" class="text-decoration-none">Vous pouvez modifier les points d'intérêt</a></p>
+                </div>
+            </div>
+
+            <div class="card text-center m-3" style="width: 20rem;">
+                <h1><img src="{{ post.image }}" alt="Post image" width="100%" height="90%"></h1>
+                <div class="card-body">
+                    <p class="card-text"><a href="{{ path('admin_category_list')}}" class="text-decoration-none">Vous pouvez modifier les categories</a></p>
+                </div>
+            </div>
+
+            <div class="card text-center m-3" style="width: 20rem;">
+                <h1><img src="{{ post.image }}" alt="City image" width="100%" height="90%"></h1>
+                <div class="card-body">
+                    <p class="card-text"><a href="{{ path('admin_user_list')}}" class="text-decoration-none">Vous pouvez modifier les utilisateurs</a></p>
+                </div>
+            </div>
+
+        </div>
     </div>
-{% endblock %} 
+</div>
+{% endblock %}

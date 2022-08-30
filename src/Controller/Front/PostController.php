@@ -25,10 +25,11 @@ class PostController extends AbstractController
     public function read(PostRepository $postRepo, int $id): Response
     {
         $post = $postRepo->find($id);
-        // var_dump($post);
-        // $date=$post->getDate();
-        // var_dump($date);
-        // die;
+        if ($post === null )
+        { 
+            return $this->json('No post found with id ' . $id, Response::HTTP_NOT_FOUND);        
+        }
+
         return $this->json($post, 200, [], ['groups' => 'api_post_read']);
     }
 
@@ -58,6 +59,15 @@ class PostController extends AbstractController
         }
         $post->setStatus(1);
         $post->setCreatedAt(new \DateTime());
+        
+        //! if user doesnt provide URl for image, it will set image of the city
+        $city = $post->getCity();
+        if(!$post->getImage())
+        {
+            $post->setImage($city->getImage());
+        }
+        //!========
+
         $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt ajouté', Response::HTTP_CREATED);

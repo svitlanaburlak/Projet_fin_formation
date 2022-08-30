@@ -57,6 +57,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      * @Groups({"api_category_post"})
      * @Groups({"api_category_list"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
@@ -68,6 +69,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      * @Groups({"api_category_list"})
      */
     private $date;
@@ -77,6 +79,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      * @Groups({"api_category_list"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
@@ -87,6 +90,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      * @Groups({"api_category_list"})
      * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
@@ -97,6 +101,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      * @Groups({"api_category_list"})
      */
     private $createdAt;
@@ -111,6 +116,7 @@ class Post
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
      * @Groups({"api_post_read"})
+     * @Groups({"api_user_read"})
      */
     private $category;
 
