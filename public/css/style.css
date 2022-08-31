@@ -141,3 +141,10 @@
     color: white;
     background-color:  #fc266d8a;
 }
+
+/* THEME-DARK */
+
+.theme-dark{
+    color: white;
+    background-color: black;
+}
