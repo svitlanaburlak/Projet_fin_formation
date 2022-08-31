@@ -28,7 +28,7 @@
                 <th>Adresse</th>
                 <td>{{ post.address }}</td>
             </tr>
-             <tr>
+            <tr>
                 <th>Date</th>
                 <td>{{ post.date }}</td>
             </tr>
@@ -36,9 +36,9 @@
                 <th>Statut</th>
                 <td>
                     {% if post.status is same as 1 %}
-                        actif
+                    actif
                     {% else %}
-                        inactif
+                    inactif
                     {% endif %}
                 </td>
             </tr>
@@ -58,7 +58,7 @@
                 <th>Categories</th>
                 <td>
                     {% for category in post.category %}
-                        <a href=""><span class="btn btn-info">{{ category.name }}</span></a>
+                    <a href=""><span class="btn btn-info">{{ category.name }}</span></a>
                     {% endfor %}
                 </td>
             </tr>
@@ -69,17 +69,17 @@
             <tr>
                 <th>Date de modification</th>
                 {% if post.updatedAt is defined and post.updatedAt is not null %}
-                    <td>{{ post.updatedAt }}</td>
+                <td>{{ post.updatedAt }}</td>
                 {% else %}
-                    <th>pas encore modifié</th>
+                <th>pas encore modifié</th>
                 {% endif %}
             </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-primary" href="{{ path('admin_post_update', {'id': post.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_post_list') }}">Retour</a>
-
-    {{ include('back/post/_delete_form.html.twig') }}
+    <div class="all-button">
+        <a class="button-update" href="{{ path('admin_post_update', {'id': post.id}) }}">Modifier</a>
+        <a class="button-back" href="{{ path('admin_post_list') }}">Retour</a>
+        {{ include('back/post/_delete_form.html.twig') }}
     </div>
+</div>
 {% endblock %}

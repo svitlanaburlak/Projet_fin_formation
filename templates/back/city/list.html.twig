@@ -3,21 +3,22 @@
 {% block title %}Cities{% endblock %}
 
 {% block body %}
-    <div class="d-flex justify-content-evenly">
-        <h1>Villes</h1>
-        <div class="d-flex align-items-center">        
-            <a href="{{ path('admin_city_create') }}"class="btn-add" title="Ajouter"><i class="bi bi-plus-circle"></i> Ajouter</a>
-        </div>
+<div class="d-flex justify-content-evenly">
+    <h1>Villes</h1>
+    <div class="d-flex align-items-center">
+        <a href="{{ path('admin_city_create') }}" class="button-add" title="Ajouter"><i class="bi bi-plus-circle"></i>
+            Ajouter</a>
     </div>
+</div>
 
-    {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        {% endfor %}
-    {% endfor %}
+{% for label, messages in app.flashes %}
+{% for message in messages %}
+<div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endfor %}
 
 <div class="table-responsive">
     <table class="table container px-4">
@@ -33,32 +34,36 @@
             </tr>
         </thead>
         <tbody>
-        {% for city in cities %}
+            {% for city in cities %}
             <tr>
                 <td>{{ city.id }}</td>
                 <td><a href="{{ path('admin_city_read', {'id': city.id}) }}">{{ city.name }}<a></td>
                 <td>
-                {% if city.image != "" %}
+                    {% if city.image != "" %}
                     <img style="max-width:100px" src="{{ city.image }}" />
-                {% else %}
+                    {% else %}
                     <p>Pas d'image définie</p>
-                {% endif %}
+                    {% endif %}
                 </td>
                 <td>{{ city.country }}</td>
                 <td>{{ city.slug }}</td>
                 <td>{{ city.description }}</td>
                 <td>
-                    <a href="{{ path('admin_city_read', {'id': city.id}) }}" class="btn btn-sm btn-primary" title="Voir"><i class="bi bi-three-dots"></i></a>
-                    <a href="{{ path('admin_city_update', {'id': city.id}) }}" class="btn btn-sm btn-warning" title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    <div class="all-button">
+                        <a href="{{ path('admin_city_read', {'id': city.id}) }}" class="button-read-small"
+                            title="Afficher"><i class="bi bi-three-dots"></i></a>
+                        <a href="{{ path('admin_city_update', {'id': city.id}) }}" class="button-update-small"
+                            title="Modifier"><i class="bi bi-pencil-square"></i></a>
+                    </div>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
                 <td colspan="10">Pas d'enregistrement trouvé</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-</div> 
+</div>
 
 {% endblock %}

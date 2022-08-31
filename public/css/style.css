@@ -35,10 +35,109 @@
     height: auto;
 }
 
-.btn-add {
+.all-button {
+    display: flex;
+}
+
+.all-button-update {
+    display: flex;
+}
+
+.button-add {
     background-color: #7e049c;
     padding: 3px 50px;
     border-radius: 3px;
     text-decoration: none;
     color: white;
+}
+
+.button-add:hover {
+    color: white;
+    background-color: #7e049c97;
+}
+
+.button-update {
+    background-color: #fa6912;
+    padding: 8px 30px;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.button-update:hover {
+    color: white;
+    background-color: #fa6b1297;
+}
+
+.button-update-small {
+    background-color: #fa6912;
+    padding: 6px 9px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+}
+
+.button-update-small:hover {
+    color: white;
+    background-color: #fa6b1297;
+}
+
+.button-read-small {
+    background-color: #f8099a;
+    padding: 6px 9px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+}
+
+.button-read-small:hover {
+    color: white;
+    background-color: #f809988c;
+}
+
+.button-back {
+    background-color: #fbd404;
+    padding: 9px 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.button-back:hover {
+    color: white;
+    background-color: #fbd60497;
+}
+
+.button-delete {
+    background-color: #45048f;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+.button-delete:hover {
+    color: white;
+    background-color: #45048f97;
+}
+
+.button-save {
+    background-color:  #fc266c;
+    padding: 6px 20px;
+    border-radius: 3px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
+.button-save:hover {
+    color: white;
+    background-color:  #fc266d8a;
 }
