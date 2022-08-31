@@ -19,11 +19,11 @@
             <tr>
                 <th>Image</th>
                 <td>
-                {% if city.image != "" %}
+                    {% if city.image != "" %}
                     <img style="max-width:100px" src="{{ city.image }}" />
-                {% else %}
+                    {% else %}
                     <p>Pas d'image définie</p>
-                {% endif %}
+                    {% endif %}
                 </td>
             </tr>
 
@@ -41,10 +41,10 @@
             </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-primary" href="{{ path('admin_city_update', {'id': city.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_city_list') }}">Retour</a>
-
-    {{ include('back/city/_delete_form.html.twig') }}
+    <div class="all-button">
+        <a class="button-update" href="{{ path('admin_city_update', {'id': city.id}) }}">Modifier</a>
+        <a class="button-back" href="{{ path('admin_city_list') }}">Retour</a>
+        {{ include('back/city/_delete_form.html.twig') }}
     </div>
+</div>
 {% endblock %}

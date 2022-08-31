@@ -34,12 +34,12 @@
             </tr>
             <tr>
                 <th>Photo</th>
-                <td> 
-                {% if user.image != "" %}
+                <td>
+                    {% if user.image != "" %}
                     <img style="max-width:100px" src="{{ user.image }}" />
-                {% else %}
+                    {% else %}
                     <p>Pas d'image définie</p>
-                {% endif %}
+                    {% endif %}
                 </td>
             </tr>
             {# <tr>
@@ -52,14 +52,10 @@
             </tr>
         </tbody>
     </table>
-
-    <a class="btn btn-primary" href="{{ path('admin_user_update', {'id': user.id}) }}">Modifier</a>
-    <a class="btn btn-success" href="{{ path('admin_user_list') }}">Retour</a>
-
-    {{ include('back/user/_delete_form.html.twig') }}
-
-        
-        
-
+    <div class="all-button">
+        <a class="button-update" href="{{ path('admin_user_update', {'id': user.id}) }}">Modifier</a>
+        <a class="button-back" href="{{ path('admin_user_list') }}">Retour</a>
+        {{ include('back/user/_delete_form.html.twig') }}
+    </div>
 </div>
 {% endblock %}
