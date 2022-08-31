@@ -108,7 +108,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Entrée payante mais ça vaut le coup croyez-moi. En famille comme entre amis ou en amoureux, vous allez adorer vous promener entre les mosaïques de Gaudi, déambuler entre les colonnes de la salle Hypostyle, vous reposer un instant sur le célèbre banc recouvert de mosaïques avec derrière vous une vue à couper le souffle sur Barcelone. A chaque fois que des amis français viennent nous visiter, nous leur faisons découvrir cet endroit incroyable et nous passons tous un très bon moment.",
                 "address" => "08024 Barcelona",
                 "image" => "https://images.unsplash.com/photo-1593368858664-a7fe556ab936?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                "user" => "zrichard@remy.fr",
+                "user" => "gregoire.lejeune@thomas.net",
                 "city" => "Barcelone",
                 "categories" => [
                     "Sorties",
@@ -120,7 +120,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Si vous voulez boire un verre avec vue sur la Sagrada Familia et la mer en second plan, venez au dernier étage de cet hôtel ! Le personnel est accueillant, les cocktails sont délicieux et l'ambiance cool avec musique lounge et food truck proposé certains soirs. Pensez à réserver pour être sûr de ne pas finir debout toute la soirée. ",
                 "address" => "Carrer del Rosselló, 390, 08025 Barcelona",
                 "image" => "https://images.unsplash.com/photo-1621275471769-e6aa344546d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
-                "user" => "zrichard@remy.fr",
+                "user" => "gregoire.lejeune@thomas.net",
                 "city" => "Barcelone",
                 "categories" => [
                     "Sorties",
@@ -143,7 +143,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Un lieu unique qui dispense des sessions de yoga de tout type, et propose un espace restaurant avec options végétariennes, vegan, gluten free et protein friendly. Faîtes un cours d'essai, vous allez adorer !",
                 "address" => "Gran Via de les Corts Catalanes, 692 Barcelona",
                 "image" => "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1220&q=80",
-                "user" => "zrichard@remy.fr",
+                "user" => "gregoire.lejeune@thomas.net",
                 "city" => "Barcelone",
                 "categories" => [
                     "Activités",
@@ -191,7 +191,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Petit kiosque proposant de généreux kebabs au poulet très appréciés, accompagnés de légumes grillés. S'armer de patience, la file d'attente est souvent très longue !",
                 "address" => "Mehringdamm 32, 10961 Berlin",
                 "image" => "https://media0.faz.net/ppmedia/aktuell/stil/essen-trinken/3501693546/1.5946904/format_top1_breit/woran-liegt-es-dass-menschen.jpg",
-                "user" => "suzanne.lambert@lamy.com",
+                "user" => "arousseau@club-internet.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Gastronomie",
@@ -202,7 +202,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "C’était autrefois le Mur de Berlin. C’est aujourd’hui la plus longue galerie à ciel ouvert du monde. 1,3 km incroyables pour découvrir ou redécouvrir l’art et l’histoire du Mur de Berlin.",
                 "address" => "Mühlenstraße 3-100, 10243 Berlin",
                 "image" => "https://images.unsplash.com/photo-1642764984363-a1d85a10b834?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1146&q=80",
-                "user" => "eugene.langlois@monnier.fr",
+                "user" => "luc79@orange.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Culture",
@@ -214,7 +214,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-09-23 18:00:00",
                 "address" => "",
                 "image" => "https://images.unsplash.com/photo-1545684361-65ed79b47ea1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                "user" => "suzanne.lambert@lamy.com",
+                "user" => "arousseau@club-internet.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Evénements",
@@ -227,7 +227,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-11-19 14:00:00",
                 "address" => "Bodestraße 1-3, 10178 Berlin",
                 "image" => "https://img.lemde.fr/2011/01/24/64/0/3336/1668/664/0/75/0/ill_1469666_9031_606233.jpg",
-                "user" => "suzanne.lambert@lamy.com",
+                "user" => "arousseau@club-internet.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Activités",
@@ -239,7 +239,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Venez partager des espaces, des outils et des connaissances pour créer des symbioses insolites et grandir ensemble. Cet espace se situe dans un ancien hangar modernisé mais qui a conservé son aspect industriel, le tout dans le respect des normes environnementales.",
                 "address" => "Wilhelminenhofstraße 92, 12459 Berlin",
                 "image" => "https://kaosberlin.de/wp-content/uploads/slider/cache/5125dcabbc39dcafa65310bef15bbcc7/Copyright_by_David_Dollmann_Copyright_by_David_Dollmann_2017.12.06-Kaos-Hallenbilder-Mehrfachbelichtung2519.jpg",
-                "user" => "eugene.langlois@monnier.fr",
+                "user" => "luc79@orange.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Co-Working",
@@ -250,7 +250,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Premier snack à proposer la célèbre et très berlinoise Currywurst à Berlin-Est, dès 1960! Situé sous les rails de la station de métro aérien “Eberswalder Straße”, Konnopke’s Imbiss vaut le détour ! ",
                 "address" => "Schönhauser Allee 44b, 10435 Berlin",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Berlin_Konnopke%E2%80%99s_Imbi%C3%9F.jpg/1280px-Berlin_Konnopke%E2%80%99s_Imbi%C3%9F.jpg",
-                "user" => "eugene.langlois@monnier.fr",
+                "user" => "luc79@orange.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Gastronomie",
@@ -261,7 +261,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Bar en bord de rivière avec terrasse en bois, musique électronique et fêtes le dimanche après-midi.",
                 "address" => "Am Flutgraben, 12435 Berlin",
                 "image" => "https://www.visitberlin.de/system/files/styles/visitberlin_bleed_header_visitberlin_desktop_1x/private/image/Kanufahrt_Am_Flutgraben_Foto_Philip_Koschel%20%284%29_web.jpg.webp?h=1c9b88c9&itok=8f5Mu-DM",
-                "user" => "eugene.langlois@monnier.fr",
+                "user" => "luc79@orange.fr",
                 "city" => "Berlin",
                 "categories" => [
                     "Sorties",
@@ -272,7 +272,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Dans un quartier du township Langa ce petit restaurant nous invite a vivre une expérience unique: Le buffet a volonté délicieux. La musique live. Un artiste du quartier et ses peintures. Le récit de Mama. Le tout dans une ambiance plus que conviviale. Très agréable soirée en perspective avec des personnes venus des quatres coins du monde.",
                 "address" => "45 Harlem Avenue Langa, Le Cap 7455 Afrique du Sud",
                 "image" => "https://media.istockphoto.com/photos/beef-stew-picture-id658496398?k=20&m=658496398&s=612x612&w=0&h=iZSpC7ho5a_OLiqqlepsgShLyHD5abBLmUdEgyPss2A=",
-                "user" => "vincent96@thibault.com",
+                "user" => "emilie.ferrand@laposte.net",
                 "city" => "Le Cap",
                 "categories" => [
                     "Gastronomie",
@@ -283,7 +283,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Magnifiquement situé sur la plage de Camps Bay, le bâtiment néoclassique accueille des spectacles intimistes souvent humoristiques de stand up, mais aussi des pièces d'auteurs et même du théâtre de bistrot.",
                 "address" => "Link Street, Camps Bay, Cape Town, 8005, Afrique du Sud",
                 "image" => "https://images.unsplash.com/photo-1503095396549-807759245b35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-                "user" => "vincent96@thibault.com",
+                "user" => "emilie.ferrand@laposte.net",
                 "city" => "Le Cap",
                 "categories" => [
                     "Culture",
@@ -295,7 +295,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-09-10 14:00:00",
                 "address" => "Rhodes Dr, Newlands, Cape Town, 7735, Afrique du Sud",
                 "image" => "https://images.unsplash.com/photo-1589473292043-49e8ecf57389?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                "user" => "michel.bernard@bailly.com",
+                "user" => "gilbert27@tele2.fr",
                 "city" => "Le Cap",
                 "categories" => [
                     "Sorties",
@@ -308,7 +308,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-10-08 10:00:00",
                 "address" => "Milner St, Paarden Eiland, Cape Town, 7405, Afrique du Sud",
                 "image" => "https://images.unsplash.com/photo-1509398484917-2a5b6439feef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
-                "user" => "michel.bernard@bailly.com",
+                "user" => "gilbert27@tele2.fr",
                 "city" => "Le Cap",
                 "categories" => [
                     "Activités",
@@ -320,7 +320,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-09-17 14:00:00",
                 "address" => "252 Albert Road, Woodstock 7925 Afrique du Sud",
                 "image" => "https://www.webtickets.co.za/admin/images/peacelovenbeats/banner_PL&B_Webtickets_Cover_20220808_172737.jpg",
-                "user" => "michel.bernard@bailly.com",
+                "user" => "gilbert27@tele2.fr",
                 "city" => "Le Cap",
                 "categories" => [
                     "Evénements",
@@ -332,7 +332,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Le Cap est la plaque tournante cosmopolite de l'Afrique et l'emblématique Waterfront est l'endroit où le monde se rencontre. Soyez au cœur de tout à Workshop17 Watershed - au-dessus d'un marché artisanal organisé dans un entrepôt magnifiquement converti avec vue sur le port jusqu'à Table Mountain.",
                 "address" => "Watershed, 17 Dock Rd, Victoria & Alfred Waterfront, Cape Town, 8002, Afrique du Sud",
                 "image" => "https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                "user" => "vincent96@thibault.com",
+                "user" => "emilie.ferrand@laposte.net",
                 "city" => "Le Cap",
                 "categories" => [
                     "Co-Working",
@@ -343,7 +343,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Surement de loin la boulangerie française la plus réputée de Londres, cette boulangerie familiale venant du sud de la France a toujours su éveiller nos papilles avec leurs incroyables pains et pâtisseries depuis 1948. Leurs produits sont préparés devant les clients pour que tu puisses observer leur travail. Le but est que tu ressentes à travers le goût et le visuel l’amour que porte les boulangers à créer leurs pains. ",
                 "address" => "279 Grays Inn Rd au Nord de Londres",
                 "image" => "https://images.unsplash.com/photo-1586443327882-6a63805ca1fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                "user" => "meunier.franck@ribeiro.org",
+                "user" => "laurent75@toussaint.com",
                 "city" => "Londres",
                 "categories" => [
                     "Gastronomie",
@@ -355,7 +355,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-09-09 17:00:00",
                 "address" => "The Savoy, The Strand, London WC2R 0EU",
                 "image" => "https://cdn.pixabay.com/photo/2017/04/05/01/16/food-2203732_960_720.jpg",
-                "user" => "gbigot@fouquet.fr",
+                "user" => "dgaudin@dbmail.com",
                 "city" => "Londres",
                 "categories" => [
                     "Sorties",
@@ -368,7 +368,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Si vous êtes fan des aventures de Harry Potter, rendez-vous dans les studios de la Warner Bros. Vous arpenterez les décors et découvrirez tous les secrets des tournages. Passionnant !",
                 "address" => "Warner Bros. Studio Tour London, Studio Tour Dr, Leavesden, Watford WD25 7LR",
                 "image" => "https://images-ext-1.discordapp.net/external/AQeGsor4CBwu2VJHGZLzY17DpQ0kJyGBTeIsnsEPTdk/https/cdn.pixabay.com/photo/2016/09/02/22/59/harry-potter-1640525_960_720.jpg",
-                "user" => "zchretien@descamps.com",
+                "user" => "maryse99@leroy.com",
                 "city" => "Londres",
                 "categories" => [
                     "Culture",
@@ -380,7 +380,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Viens pratiquer le Hatha yoga au Hyde Park (devant le lac), ça se passe les jeudis 19h à 20h15. ",
                 "address" => "Hyde Park",
                 "image" => "https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                "user" => "zchretien@descamps.com",
+                "user" => "maryse99@leroy.com",
                 "city" => "Londres",
                 "categories" => [
                     "Activités",
@@ -393,7 +393,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-10-31 21:00:00",
                 "address" => "49 Dean Street, Londres W1D 5BG",
                 "image" => "https://media.istockphoto.com/photos/making-memories-on-halloween-party-picture-id845970870?k=20&m=845970870&s=612x612&w=0&h=WUAQ13G8V47eJ4kstcfPUsjXljLIOSssyKNmsO_j6sw=",
-                "user" => "meunier.franck@ribeiro.org",
+                "user" => "laurent75@toussaint.com",
                 "city" => "Londres",
                 "categories" => [
                     "Sorties",
@@ -407,7 +407,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "address" => "Shepherd's Bush Green, London W12 8PP",
                 "image" => "https://media.istockphoto.com/photos/detecrive-or-investigation-concept-tools-on-the-wood-table-picture-id513541610?k=20&m=513541610&s=612x612&w=0&h=9Ie2P34lXK7sjgrFALPk5HAHjSVb9gpqiPa59cSLMxY=",
                 "city" => "Londres",
-                "user" => "georges.leclercq@berger.org",
+                "user" => "ines.diaz@hotmail.fr",
                 "categories" => [
                     "Sorties",
                     "Activités"
@@ -418,7 +418,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Vous avez toujours rêvé de travailler chez Google ? Eh bien maintenant vous pouvez. Google Campus n'a peut-être pas de toboggan, mais il propose des espaces de coworking conçus par Jump Studios, équipés d'un comptoir d'accueil recouvert de Lego et d'un 'mur d'inspiration'. Des conférenciers experts, des événements de mise en réseau et le mentorat du personnel de Google aident les entreprises naissantes à se développer. Idéal pour: les startups technologiques avec un faible pour Lego",
                 "address" => "4-5 Bonhill Street, London EC2A 4BX",
                 "image" => "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                "user" => "georges.leclercq@berger.org",
+                "user" => "ines.diaz@hotmail.fr",
                 "city" => "Londres",
                 "categories" => [
                     "Co-Working",
@@ -429,7 +429,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Pitchoun! est une boulangerie, une pâtisserie et un restaurant français raffinés, situés dans le quartier du centre-ville de Los Angeles et de Beverly Grove, une entreprise familiale et artisanale. Sont proposés des pains frais artisanaux et des pâtisseries et gâteaux maison, mais aussi un éventail de salades et sandwichs sains, de plats chauds et de soupes, et bien plus encore. Tout est fait maison tous les jours, à partir de levain maison et d'ingrédients biologiques ou locaux.",
                 "address" => "545 S Olive St, Los Angeles, CA 90013-1006",
                 "image" => "https://media-cdn.tripadvisor.com/media/photo-s/14/42/a0/ae/la-terrasse.jpg",
-                "user" => "guillaume13@bouvet.fr",
+                "user" => "edouard.buisson@clerc.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Gastronomie",
@@ -440,7 +440,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Le Petit Paris est la vision des restaurateurs cannois David et Fanny Rolland. Le restaurant de 400 places offre une expérience culinaire de brasserie par excellence au cœur historique du centre-ville de Los Angeles. Sous la direction des chefs Baptiste Grellier et Jérémie Cazes, le Petit Paris propose un brunch, un déjeuner et un dîner et possède un magasin de détail, 'La Boutique', qui présente des produits de spécialité français exclusifs et des œuvres d'art de certains des artistes les plus remarquables de France.",
                 "address" => "418 S Spring St, Los Angeles, CA 90013-2002",
                 "image" => "https://www.discoverlosangeles.com/sites/default/files/business/le-petit-paris/h_2000-crm-la-46171922_1929656237109965_2599323978589798400_o0-74c7b8a45056a36_74c7b9c1-5056-a36f-235e917b6b88abbf.jpg",
-                "user" => "guillaume13@bouvet.fr",
+                "user" => "edouard.buisson@clerc.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Gastronomie",
@@ -451,7 +451,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Situé sur la face sud du Mont Hollywood dans le Griffith Park à 300 mètres d'altitude, c'est un endroit apprécié des touristes et des habitants de la ville pour ses expositions scientifiques, son planétarium et le panorama qu'il donne sur toute la région allant du centre-ville de Los Angeles jusqu'à la baie de Santa Monica et l'océan Pacifique.",
                 "address" => "2800 East Observatory Road, Los Angeles, CA 90027",
                 "image" => "https://images.unsplash.com/photo-1566864717473-2f0daf8979e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80",
-                "user" => "guillaume13@bouvet.fr",
+                "user" => "edouard.buisson@clerc.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Culture",
@@ -464,7 +464,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-08-25 18:00:00",
                 "address" => "1000 Vin Scully Ave, Los Angeles, CA 90012",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dodger_Stadium.jpg/1200px-Dodger_Stadium.jpg",
-                "user" => "sophie.ollivier@michaud.com",
+                "user" => "barbe.francoise@leleu.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Sorties"
@@ -475,7 +475,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Union Cowork offre un espace unique et confortable pour développer des relations. Que ce soit entre collègues ou entre nouvelles connaissances, nous concevons nos espaces pour favoriser une conversation détendue et progressive.",
                 "address" => "1325 Palmetto St, Los Angeles, CA 90013",
                 "image" => "https://unioncowork.com/wp-content/uploads/2019/12/Copy-of-Union_1_HiRes-4-min.jpg",
-                "user" => "sophie.ollivier@michaud.com",
+                "user" => "barbe.francoise@leleu.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Co-Working"
@@ -486,7 +486,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Profitez de leçons de surf privée avec un moniteur professionnel sur la célèbre plage de Venice. Apprenez à surfer sur les vagues dans cette classe privée, idéale pour les débutants ou les surfeurs de niveau intermédiaire supérieur.",
                 "address" => "Marina Del Rey, Los Angeles, CA 90292",
                 "image" => "https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-                "user" => "besnard.marcel@levy.fr",
+                "user" => "qneveu@sfr.fr",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Activités",
@@ -497,7 +497,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Découvrez les sites touristiques d'Hollywood au cours de cette visite en minibus, qui vous permet de profiter d'une vue imprenable au fur et à mesure. Voyager avec un guide à bord, vous passerez par des attractions telles que le Dolby Theatre, Hollywood Sign, Rodeo Drive et les studios de cinéma. De plus, jetez un coup d'œil à certaines des demeures où des stars du passé et du présent ont vécu.",
                 "address" => "6720 Hollywood Blvd, Los Angeles, CA 90028",
                 "image" => "https://images.unsplash.com/photo-1581390114939-946f9a890a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80",
-                "user" => "besnard.marcel@levy.fr",
+                "user" => "qneveu@sfr.fr",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Activités",
@@ -509,7 +509,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2023-04-14 18:00:00",
                 "address" => "Indio, California",
                 "image" => "https://www.losangelesoffroad.com/wp-content/uploads/2019/02/Coachella-festival.jpg",
-                "user" => "guillaume13@bouvet.fr",
+                "user" => "edouard.buisson@clerc.com",
                 "city" => "Los Angeles",
                 "categories" => [
                     "Evénements",
@@ -521,7 +521,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Les glaces Giolitti. Rien que le nom fait déjà rêver les gourmands. Les glaces Giolitti ont contribué à faire la réputation des glaciers romains. Giolitti est l’un des plus célèbres parmi eux. En témoignent, les files d’attente devant la caisse. Chez Giolitti, il faut d’abord régler sa consommation, avant d’aller la commander. Prenez donc la bonne file, d’abord celle de la caisse et ensuite, celle pour être servi… si vous avez la patience.",
                 "address" => "Via degli Uffici del Vicario, 40, 00186 Roma",
                 "image" => "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                "user" => "qroy@meyer.net",
+                "user" => "lpaul@lesage.fr",
                 "city" => "Rome",
                 "categories" => [
                     "Gastronomie",
@@ -532,7 +532,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Situé entre le Colisée et le Circus Maximus, le Forum est le site archéologique le plus important de Rome. Bâti sur le Mont Palatin, le Forum est la place principale de la Rome antique.",
                 "address" => "Via della Salara Vecchia, 5/6, 00186 Roma",
                 "image" => "https://cdn.pixabay.com/photo/2014/09/23/16/56/forum-457909_960_720.jpg",
-                "user" => "leconte.corinne@lucas.org",
+                "user" => "sophie32@live.com",
                 "city" => "Rome",
                 "categories" => [
                     "Culture",
@@ -545,7 +545,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-04-21 17:00:00",
                 "address" => "",
                 "image" => "https://images.rove.me/w_740,q_85/asqpclxdz0wrzv3zcykm/rome-natale-di-roma-or-romes-birthday.jpg",
-                "user" => "qroy@meyer.net",
+                "user" => "lpaul@lesage.fr",
                 "city" => "Rome",
                 "categories" => [
                     "Evénements",
@@ -558,7 +558,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Depuis 1916 cette trattoria et pizzeria à l'ambiance intimiste, aux murs bordeaux décorés de fresques et d'arches en briques apparentes sert des plats typiques de la cuisine italienne et romaine",
                 "address" => "Via Ferruccio, 12/b/c, 00185 Roma",
                 "image" => "https://xdaysiny.com/wp-content/uploads/2019/09/Trattoria-Vecchia-Roma-Rome-best-Restaurant.jpg",
-                "user" => "leconte.corinne@lucas.org",
+                "user" => "sophie32@live.com",
                 "city" => "Rome",
                 "categories" => [
                     "Gastronomie",
@@ -570,7 +570,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-10-05 10:00:00",
                 "address" => " 00120 Vatican City",
                 "image" => "https://upload.wikimedia.org/wikipedia/commons/7/73/God2-Sistine_Chapel.png",
-                "user" => "qroy@meyer.net",
+                "user" => "lpaul@lesage.fr",
                 "city" => "Rome",
                 "categories" => [
                     "Activités",
@@ -582,7 +582,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "content" => "Millepiani est le gagnant du prix Rome's Best Cowork, décerné par Coworker.com ! C'est un open space de 400 mètres carrés, qui comprend un espace événementiel (100 places et écran de projection), une salle de réunion (15 places avec écran plasma), et plusieurs bureaux pour startups et coworkers.",
                 "address" => "Via Nicolo Odero, 13, 00154 Roma",
                 "image" => "https://coworkingmap.org/wp-content/uploads/2016/12/a-millepiani1L-705x467.jpg",
-                "user" => "leconte.corinne@lucas.org",
+                "user" => "sophie32@live.com",
                 "city" => "Rome",
                 "categories" => [
                     "Co-Working",
@@ -594,7 +594,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 "date" => "2022-08-22 18:00:00",
                 "address" => "Viale dei Gladiatori, 00135 Roma",
                 "image" => "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt9d46c72d1c8d443b/60db4959ed93bb0fb198477e/a9d2077244811ea3de761399f5e55e1f920fdafc.png?quality=80&width=1000&format=pjpg&auto=webp",
-                "user" => "qroy@meyer.net",
+                "user" => "lpaul@lesage.fr",
                 "city" => "Rome",
                 "categories" => [
                     "Sorties",

@@ -55,6 +55,7 @@ class UserFixtures extends Fixture
             $userObj->setEmail($faker->unique()->email());
             $userObj->setFirstname($faker->firstName());
             $userObj->setLastname($faker->lastName());
+            $userObj->setPresentation($faker->paragraph());
             $userObj->setRoles(['ROLE_USER']);
             $hashedPassword = $this->passwordHasher->hashPassword($userObj, 'tribu');
             $userObj->setPassword($hashedPassword);
