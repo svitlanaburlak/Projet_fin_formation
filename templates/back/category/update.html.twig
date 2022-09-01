@@ -4,8 +4,9 @@
 
 {% block body %}
 
-<div class="container">
+<div class="d-flex justify-content-evenly">
     <h1>Modifier une catégorie</h1>
+</div>
 
         {% for label, messages in app.flashes %}
             {% for message in messages %}
@@ -18,7 +19,6 @@
 
     <div class="container px-4">
         {{ include('back/category/_form.html.twig') }}
-
     </div>
 
 </div>

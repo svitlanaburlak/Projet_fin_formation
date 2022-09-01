@@ -70,7 +70,7 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $categoryRepository->add($category, true);
 
-            $this->addFlash('success', 'Catégorie modifiée');
+            $this->addFlash('warning', 'Catégorie modifiée');
             return $this->redirectToRoute('admin_category_list', [], Response::HTTP_SEE_OTHER);
         }
 
