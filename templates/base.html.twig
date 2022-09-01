@@ -14,7 +14,7 @@
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- favicon -->
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
     <title>Tribu BackOffice {% block title %}{% endblock %}</title>
 </head>
@@ -103,14 +103,15 @@
     {% block body %}{% endblock %}
 
     <!-- footer -->
-    <footer class="container-fluid py-4 border-top text-center">
+    <footer class="container-fluid py-4 text-center">
         <span class="text-muted">Tribu made with &hearts; !
+                <br><span class="theme shadow-lg" width="30px">🌙</span></a>
         </span>
     </footer>
 
     <!-- Optional JavaScript; choose one of 
                 the two! -->
-    <script src=""></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

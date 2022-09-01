@@ -147,3 +147,14 @@
     background-color:#04839c;
     border: 0;
 }
+
+/* THEME-DARK */
+
+.theme-dark{
+    color: white;
+    background-color: black;
+}
+
+.theme {
+    text-shadow: 0 0 3px #fbff00;
+}
