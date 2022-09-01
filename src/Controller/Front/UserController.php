@@ -42,7 +42,11 @@ class UserController extends AbstractController
 
         $errors = $validator->validate($user);
 
-    
+        if($userRepository->findByEmail($user->getEmail())){
+
+            return $this->json('L\'utilisateur avec cet email existe déjà : ' . $user->getEmail() , Response::HTTP_BAD_REQUEST);
+        }
+
         if (count($errors) > 0) {
 
             $errorsString = (string) $errors;
