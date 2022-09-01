@@ -3,19 +3,23 @@
 {% block title %}Ville{% endblock %}
 
 {% block body %}
-<div class="container">
+
+<div class="d-flex justify-content-evenly">
     <h1>Modifier une ville</h1>
+</div>
 
-    {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
 
-    {{ include('back/city/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    <div class="container px-4">
+        {{ include('back/city/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    </div>
 
 </div>
 {% endblock %}

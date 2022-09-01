@@ -70,7 +70,7 @@ class CityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $cityRepository->add($city, true);
 
-            $this->addFlash('success', 'Ville modifiée');
+            $this->addFlash('warning', 'Ville modifiée');
             return $this->redirectToRoute('admin_city_list', [], Response::HTTP_SEE_OTHER);
         }
 

@@ -29,6 +29,7 @@ class UserFixtures extends Fixture
         $adminUser->setLastname('Tribu');
         $adminUser->setPresentation('Admin presentation');
         $adminUser->setRoles(['ROLE_ADMIN']);
+        $adminUser->setImage('https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Blank&facialHairType=MoustacheMagnum&facialHairColor=Blonde&clotheType=ShirtVNeck&eyeType=Dizzy&eyebrowType=Default&mouthType=ScreamOpen&skinColor=Brown');
 
         $hashedPassword = $this->passwordHasher->hashPassword($adminUser, 'tribu');
         $adminUser->setPassword($hashedPassword);
@@ -41,6 +42,8 @@ class UserFixtures extends Fixture
         $stdUser->setLastname('Le Fada');
         $stdUser->setPresentation('User presentation');
         $stdUser->setRoles(['ROLE_USER']);
+        $stdUser->setImage('https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Prescription02&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&eyeType=Squint&eyebrowType=UpDownNatural&mouthType=Tongue&skinColor=Brown');
+        $stdUser->setCity($this->getReference('Le Cap'));
 
         $hashedPassword = $this->passwordHasher->hashPassword($stdUser, 'tribu');
         $stdUser->setPassword($hashedPassword);
@@ -64,8 +67,6 @@ class UserFixtures extends Fixture
 
             $this->addReference($userObj->getEmail(), $userObj);
 
-            // todo 
-            // $userObj->setCity();
         }
 
         $manager->flush();
