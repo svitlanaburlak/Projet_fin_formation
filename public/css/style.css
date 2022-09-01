@@ -151,7 +151,8 @@
 /* THEME-DARK */
 
 .theme-dark{
-    color: white;
+    color: orange;
+    font-weight: 400;
     background-color: black;
 }
 
