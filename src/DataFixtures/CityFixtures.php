@@ -74,8 +74,6 @@ class CityFixtures extends Fixture
             $cityObj->setDescription($currentCity['description']);
             $cityObj->setSlug($this->slugger->slug(strtolower($currentCity['name'])));
 
-            //* to link cities to posts
-            // $citiesObjArray[md5($currentCity['name'])] = $cityObj;
             $manager->persist($cityObj);
 
             //* reference to link fixtures files
