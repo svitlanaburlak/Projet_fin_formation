@@ -142,6 +142,12 @@
     background-color:  #fc266d8a;
 }
 
+
+.btn-primary {
+    background-color:#04839c;
+    border: 0;
+}
+
 /* THEME-DARK */
 
 .theme-dark{

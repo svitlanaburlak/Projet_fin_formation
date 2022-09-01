@@ -54,6 +54,10 @@ class UserController extends AbstractController
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
 
+            // to make the firstname and lastname start from capital letter even if provided in lowercase
+            $user->setFirstname(ucfirst($user->getFirstname()));
+            $user->setLastname(ucfirst($user->getLastname()));
+
             //! to add random avatar with 
             $faker = \Faker\Factory::create();
             $avataaar = new \Avataaar\Avataaar();
