@@ -3,9 +3,20 @@
 {% block title %}Nouvel utilisateur{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Nouvel utilisateur</h1>
-
-    {{ include('back/user/_form.html.twig') }}
+<div class="d-flex justify-content-evenly">
+    <h1>Ajouter un nouvel utilisateur</h1>
 </div>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="container px-4">
+        {{ include('back/user/_form.html.twig') }}
+    </div>
 {% endblock %}
