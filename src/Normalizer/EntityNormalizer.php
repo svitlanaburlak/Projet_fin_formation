@@ -28,6 +28,7 @@ class EntityNormalizer extends ObjectNormalizer
      * @param NameConverterInterface|null $nameConverter
      * @param PropertyAccessorInterface|null $propertyAccessor
      * @param PropertyTypeExtractorInterface|null $propertyTypeExtractor
+     * @return mixed
      */
     public function __construct(
         EntityManagerInterface $em,
@@ -44,6 +45,7 @@ class EntityNormalizer extends ObjectNormalizer
 
     /**
      * @inheritDoc
+     * @return mixed
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
@@ -52,6 +54,7 @@ class EntityNormalizer extends ObjectNormalizer
 
     /**
      * @inheritDoc
+     * @return mixed
      */
     public function denormalize($data, $class, $format = null, array $context = [])
     {

@@ -151,10 +151,7 @@
 /* THEME-DARK */
 
 .theme-dark{
-    color: white;
+    color: orange;
+    font-weight: 400;
     background-color: black;
-}
-
-.theme {
-    text-shadow: 0 0 3px #fbff00;
 }
