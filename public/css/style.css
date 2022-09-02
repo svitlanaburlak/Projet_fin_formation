@@ -148,10 +148,21 @@
     border: 0;
 }
 
+ul .dropdown-menu{
+    background-color:#04839c;
+}
+
 /* THEME-DARK */
 
 .theme-dark{
     color: orange;
     font-weight: 400;
     background-color: black;
+}
+
+/*MEDIA-QUERIES*/
+@media (min-width: 992px) and (max-width: 1418px) {
+    .link-text{
+        display: none;
+    }
 }

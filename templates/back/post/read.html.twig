@@ -36,29 +36,29 @@
                 <th>Statut</th>
                 <td>
                     {% if post.status is same as 1 %}
-                    actif
+                        actif
                     {% else %}
-                    inactif
+                        inactif
                     {% endif %}
                 </td>
             </tr>
             <tr>
                 <th>Ville</th>
-                <td><a href=""><span class="btn btn-warning">{{ post.city.name }}</span></a></td>
+                <td><a href="{{ path('admin_city_read', {'id':city.id}) }}"><span class="btn btn-warning">{{ post.city.name }}</span></a></td>
             </tr>
             <tr>
                 <th>Utilisateur</th>
                 {% if post.user %}
-                <td>{{ post.user.firstname }}</td>
+                    <td>{{ post.user.firstname }} {{ post.user.lastname }}</td>
                 {% else %}
-                <td>Inconnu</td>
+                    <td>Inconnu</td>
                 {% endif %}
             </tr>
             <tr>
                 <th>Categories</th>
                 <td>
                     {% for category in post.category %}
-                    <a href=""><span class="btn btn-info">{{ category.name }}</span></a>
+                        <a href="{{ path('admin_category_read', {'id':category.id}) }}"><span class="btn btn-info">{{ category.name }}</span></a>
                     {% endfor %}
                 </td>
             </tr>
@@ -69,9 +69,9 @@
             <tr>
                 <th>Date de modification</th>
                 {% if post.updatedAt is defined and post.updatedAt is not null %}
-                <td>{{ post.updatedAt }}</td>
+                    <td>{{ post.updatedAt }}</td>
                 {% else %}
-                <th>pas encore modifié</th>
+                    <th>pas encore modifié</th>
                 {% endif %}
             </tr>
         </tbody>

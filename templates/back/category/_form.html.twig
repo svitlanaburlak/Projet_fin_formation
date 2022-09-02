@@ -1,5 +1,7 @@
 {{ form_start(form, {"attr" : {"novalidate": "novalidate"}}) }}
     {{ form_widget(form) }}
-    <button class="button-save">{{ button_label|default('Enregistrer') }}</button>
-    <a class="button-back" href="{{ path('admin_category_list') }}">Retour</a>
+    <div class="d-flex flex-wrap justify-content-evenly">
+        <button class="button-save">{{ button_label|default('Enregistrer') }}</button>
+        <a class="button-back" href="{{ path('admin_category_list') }}">Retour</a>
+    </div>
 {{ form_end(form) }}
