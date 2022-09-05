@@ -36,15 +36,21 @@
                 <th>Photo</th>
                 <td>
                     {% if user.image != "" %}
-                    <img style="max-width:100px" src="{{ user.image }}" />
+                        <img style="max-width:100px" src="{{ user.image }}" />
                     {% else %}
-                    <p>Pas d'image définie</p>
+                        <p>Pas d'image définie</p>
                     {% endif %}
                 </td>
             </tr>
             <tr>
                 <th>Ville</th>
-                <td>{{ user.city }}</td>
+                <td>
+                {% if user.city is defined and user.city is not null %}
+                    <a href="{{ path('admin_city_read', {'id':user.city.id}) }}"><span class="btn btn-warning">{{ user.city.name }}</span></a>
+                {% else %}
+                    <th></th>
+                {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>

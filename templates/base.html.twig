@@ -36,64 +36,56 @@
                     <li class="nav-item">
                         <a class="nav-link {{"admin_home" in app.request.attributes.get('_route') ? "active":""}}" 
                         href="{{ path('admin_home')}}"><img class="nav-pics"
-                                src="{{ asset('images/home.png') }}">Accueil</a>
+                                src="{{ asset('images/home.png') }}"><span class="link-text">Accueil</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{"admin_city_list" in app.request.attributes.get('_route') ? "active":""}}" href="{{ path('admin_city_list')}}"><img class="nav-pics"
-                                src="{{ asset('images/office.png') }}">Villes</a>
+                                src="{{ asset('images/office.png') }}"><span class="link-text">Villes</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{"admin_user_list" in app.request.attributes.get('_route') ? "active":""}}" href="{{ path('admin_user_list')}}"><img class="nav-pics"
-                                src="{{ asset('images/group.png') }}">Utilisateurs</a>
+                                src="{{ asset('images/group.png') }}"><span class="link-text">Utilisateurs</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{"admin_post_list" in app.request.attributes.get('_route') ? "active":""}}" href="{{ path('admin_post_list')}}"><img class="nav-pics"
-                                src="{{ asset('images/pin.png') }}">Points d'intérêts</a>
+                                src="{{ asset('images/pin.png') }}"><span class="link-text">Points d'intérêts</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{"admin_category_list" in app.request.attributes.get('_route') ? "active":""}}" href="{{ path('admin_category_list')}}"><img class="nav-pics"
-                                src="{{ asset('images/categories.png') }}">Catégories</a>
+                                src="{{ asset('images/categories.png') }}"><span class="link-text">Catégories</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://tribu.surge.sh/"><img class="nav-pics"
-                                src="{{ asset('images/airplane.png') }}">Tribu Front</a>
+                                src="{{ asset('images/airplane.png') }}"><span class="link-text">Tribu Front</span></a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item-button dropdown">
-                        {% if app.user %}
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown">
+                
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item-button dropdown">
+                            {% if app.user %}
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
 
-                            <span>{{ app.user.firstname }} {{ app.user.lastname }}</span>
+                                <span class="text-warning">{{ app.user.firstname }}</span>
 
-                            <i class="bi bi-person-square"></i>
-                        </a>
+                                <i class="bi bi-person-square text-warning"></i>
+                            </a>
+                            {% endif %}
+                            {% if app.user %}
+                            <ul class="dropdown-menu text-warning">
+                                <li><a class="dropdown-item text-warning"
+                                        href="{{ path('admin_user_read', {'id': app.user.id}) }}">Profil</a></li>
+                            </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
 
-                        {% else %}
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown">
-
-                            <span>Non connecté</span>
-
-                            <i class="bi bi-person-square"></i>
-                        </a>
-                        {% endif %}
-                        {% if app.user %}
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="{{ path('admin_user_read', {'id': app.user.id}) }}">Profil</a></li>
-                        </ul>
-                        {% endif %}
-                    </li>
-                </ul>
-
-                {% if app.user is defined and app.user is not null %}
-                <a href="{{ path('app_logout') }}" type="button" class="btn custom me-2">Déconnexion</a>
-                {% else %}
-                <a href="{{ path('app_login') }}" type="button" class="btn custom me-2">Connexion</a>
-                {% endif %}
-
+                    {% if app.user is defined and app.user is not null %}
+                        <a href="{{ path('app_logout') }}" type="button" class="btn custom me-2">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" type="button" class="btn custom me-2">Connexion</a>
+                    {% endif %}
+                
             </div>
 
 
