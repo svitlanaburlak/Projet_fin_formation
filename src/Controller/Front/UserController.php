@@ -44,7 +44,7 @@ class UserController extends AbstractController
 
         if($userRepository->findByEmail($user->getEmail())){
 
-            return $this->json('L\'utilisateur avec cet email existe déjà : ' . $user->getEmail() , Response::HTTP_BAD_REQUEST);
+            return $this->json('L\'utilisateur avec cet email existe déjà' , Response::HTTP_BAD_REQUEST);
         }
 
         if (count($errors) > 0) {
