@@ -155,9 +155,9 @@ ul .dropdown-menu{
 /* THEME-DARK */
 
 .theme-dark{
-    color: orange;
+    color: white;
     font-weight: 400;
-    background-color: black;
+    background-color: rgb(67, 67, 67);
 }
 
 /*MEDIA-QUERIES*/
