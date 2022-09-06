@@ -20,7 +20,7 @@ final class Version20220822085118 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        // $this->addSql('ALTER TABLE post DROP FOREIGN KEY post_ibfk_1');
+        $this->addSql('ALTER TABLE post DROP FOREIGN KEY FK_5A8A6C8DA76ED395');
         $this->addSql('ALTER TABLE post ADD CONSTRAINT post_ibfk_1 FOREIGN KEY (user_id) REFERENCES user (id) ON UPDATE SET NULL ON DELETE SET NULL');
         
     }
