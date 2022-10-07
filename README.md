@@ -13,6 +13,8 @@ Démarrez votre nouvelle vie !
 - [Lola Costa](https://github.com/LolaCosta-DeVinci)
 - [Laurent Arcos](https://www.github.com/LaurentArcos)
 
+[Repo de la partie Front](https://github.com/LaurentArcos/Tribu-Front)
+
 
 ### L'équipe Back-end
 
