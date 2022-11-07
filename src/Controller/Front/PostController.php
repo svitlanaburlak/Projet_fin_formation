@@ -60,13 +60,27 @@ class PostController extends AbstractController
         $post->setStatus(1);
         $post->setCreatedAt(new \DateTime());
         
-        //! if user doesnt provide URl for image, it will set image of the city
+        // checks if created post is of category "Evénements"(5), so it must have the date fulfilled
+        // thanks to the fact that in ArrayCollection of Category: index of the array = id of the category
+        if($post->getCategory()->containsKey(5)){
+            if(empty($post->getDate())){
+                return $this->json('L\'événement doit avoir une date', Response::HTTP_BAD_REQUEST);
+            }  
+        } else {
+            // if it is not "Evénements" front can send us the date of creation of the post by default.
+            // checks if date in format 'Y-m-d' = CreatedAt, so it is date send from front by default.
+            if(substr($post->getDate(), 0, -10) == $post->getCreatedAt()){
+                // as it is not "Evénements", it will set Date to null
+                $post->setDate(null);
+            }
+        }
+
+        // if user doesnt provide URl for image, it will set image of the city
         $city = $post->getCity();
         if(!$post->getImage())
         {
             $post->setImage($city->getImage());
         }
-        //!========
 
         $postRepo->add($post, true);
 
