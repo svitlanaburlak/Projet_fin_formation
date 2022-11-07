@@ -8,6 +8,7 @@ use App\Repository\CityRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -29,7 +30,10 @@ class CityController extends AbstractController
     /**
      * @Route("/create", name="create", methods={"GET", "POST"})
      */
-    public function create(Request $request, CityRepository $cityRepository): Response
+    public function create(
+        Request $request, 
+        CityRepository $cityRepository, 
+        SluggerInterface $slugger): Response
     {
         $city = new City();
 
@@ -37,6 +41,7 @@ class CityController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $city->setSlug($slugger->slug(strtolower($city->getName())));
             $cityRepository->add($city, true);
 
             $this->addFlash('success', 'Ville ajoutée');

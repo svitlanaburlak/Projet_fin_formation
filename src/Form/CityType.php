@@ -20,9 +20,6 @@ class CityType extends AbstractType
             ->add('country', TextType::class, [
                 'label' => 'Nom du pays',
                 ])
-            ->add('slug', TextType::class, [
-                'label' => 'nom-de-la-ville-sluggifié',
-                ])
             ->add('description', TextType::class, [
                 'label' => 'Description de la ville',
                 ])
