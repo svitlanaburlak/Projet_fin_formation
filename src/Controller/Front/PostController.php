@@ -50,7 +50,10 @@ class PostController extends AbstractController
 
         $errors = $validator->validate($post);
 
-    
+        if(empty($post->getAddress())){
+            return $this->json('L\'adresse ne peut pas être vide', Response::HTTP_BAD_REQUEST);
+        }
+
         if (count($errors) > 0) {
 
             $errorsString = (string) $errors;
@@ -76,7 +79,7 @@ class PostController extends AbstractController
             }
         }
 
-        // if user doesnt provide URl for image, it will set image of the city
+        // if user doesnt provide URL for image, it will set image of the city
         $city = $post->getCity();
         if(!$post->getImage())
         {
