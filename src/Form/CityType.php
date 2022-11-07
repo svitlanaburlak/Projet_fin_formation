@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class CityType extends AbstractType
 {
@@ -16,7 +18,14 @@ class CityType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nom de la ville',
                 ])
-            ->add('image')
+            ->add('image', FileType::class,
+                ['mapped' => false,
+                'label' => 'Photo',
+                'constraints' => [
+                    new File([
+                        'mimeTypesMessage' => 'Please upload a valid image',
+                    ])
+                ],])
             ->add('country', TextType::class, [
                 'label' => 'Nom du pays',
                 ])

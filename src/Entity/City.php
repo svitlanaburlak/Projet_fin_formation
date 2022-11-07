@@ -47,7 +47,6 @@ class City
      * @Groups({"api_city_list"})
      * @Groups({"api_city_read"})
      * @Groups({"api_post_list"})
-     * @Assert\NotBlank(message="Merci de remplir ce champs")
      */
     private $image;
 

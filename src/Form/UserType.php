@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -27,7 +29,7 @@ class UserType extends AbstractType
                     'Utilisateur' => 'ROLE_USER',
                 ],
                 "expanded" => true,
-                //* to fix array to strin error can put multiple=true. it will make a checkbox not radio button.
+                //* to fix array to string error can put multiple=true. it will make a checkbox not radio button.
                 //* or we can addTransformer for array $roles
                 // "multiple" => true
                 // 'mapped' => false,
@@ -47,9 +49,14 @@ class UserType extends AbstractType
             ->add('presentation', null, [
                 'label' => 'Présentation',
             ])
-            ->add('image', null, [
-                'label' => 'Photo',
-            ])
+            ->add('image', FileType::class,
+            ['mapped' => false,
+            'label' => 'Photo',
+            'constraints' => [
+                new File([
+                    'mimeTypesMessage' => 'Please upload a valid image',
+                ])
+            ],])
             ->add('city', null, [
                 'label' => 'Ville',
             ])

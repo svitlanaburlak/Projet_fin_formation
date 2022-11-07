@@ -54,18 +54,17 @@ class PostController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
     
-                //todo how to make th URL of the server
-                $post->setImage('https://pierre-henri-kocan-server.eddi.cloud/projet-reseau-social-back/public/post_image/'. $newFilename);
+                $post->setImage('http://localhost/My_github/Projet_fin_formation/public/post_image/'. $newFilename);
             }
 
             $post->setCreatedAt(new DateTime());
-            //! if user doesnt provide URl for image, it will set image of the city
+
+            // if user doesnt provide URl for image, it will set image of the city
             $city = $post->getCity();
             if(!$post->getImage())
             {
                 $post->setImage($city->getImage());
             }
-            //!========
 
             $postRepo->add($post, true);
 
