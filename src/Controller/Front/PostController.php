@@ -4,7 +4,6 @@ namespace App\Controller\Front;
 
 use App\Entity\Post;
 use App\Repository\PostRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -92,20 +91,19 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/{id<\d+>}", name="update", methods="PATCH", requirements={"id"="\d+"})
+     * @Route("/posts/{id}", name="update", methods="PATCH", requirements={"id"="\d+"})
      * @return Response
      */
     public function update(
         $id,
-        EntityManagerInterface $em, 
-        PostRepository $postRepository,
+        PostRepository $postRepo,
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator
         )
     {
 
-        $post = $postRepository->find($id);
+        $post = $postRepo->find($id);
 
         // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
         if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
@@ -138,7 +136,8 @@ class PostController extends AbstractController
         }
 
         $post->setUpdatedAt(new \DateTime());
-        $em->flush();
+
+        $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt modifié', Response::HTTP_OK);
     }

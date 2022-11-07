@@ -77,7 +77,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
+     * @Route("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
 
     public function read(User $user): Response
@@ -88,7 +88,7 @@ class UserController extends AbstractController
     }
 
      /**
-     * @Route("/{id}/update", name="update", methods={"GET", "POST"})
+     * @Route("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      * @return Response
      */
     public function update(Request $request, Security $security, User $user, UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository)
@@ -123,7 +123,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {

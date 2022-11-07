@@ -4,7 +4,6 @@ namespace App\Controller\Front;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,24 +14,21 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-    /**
-     * @Route("/api", name="api_user_")
-     */
-
+/**
+ * @Route("/api", name="api_user_")
+ */
 class UserController extends AbstractController
 {
 
-     /**
+    /**
      * @Route("/users", name="create", methods={"POST"})
      */
-
      public function create(
-        EntityManagerInterface $em, 
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator,
         UserPasswordHasherInterface $passwordHasher,
-        UserRepository $userRepository
+        UserRepository $userRepo
         )
     {
 
@@ -42,7 +38,7 @@ class UserController extends AbstractController
 
         $errors = $validator->validate($user);
 
-        if($userRepository->findByEmail($user->getEmail())){
+        if($userRepo->findByEmail($user->getEmail())){
 
             return $this->json('L\'utilisateur avec cet email existe déjà' , Response::HTTP_BAD_REQUEST);
         }
@@ -54,26 +50,24 @@ class UserController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-            $passwordClear = $user->getPassword();
-            $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
-            $user->setPassword($hashedPassword);
+        $passwordClear = $user->getPassword();
+        $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
+        $user->setPassword($hashedPassword);
 
-            // to make the firstname and lastname start from capital letter even if provided in lowercase
-            $user->setFirstname(ucfirst($user->getFirstname()));
-            $user->setLastname(ucfirst($user->getLastname()));
+        // to make the firstname and lastname start from capital letter even if provided in lowercase
+        $user->setFirstname(ucfirst($user->getFirstname()));
+        $user->setLastname(ucfirst($user->getLastname()));
 
-            //! to add random avatar with 
-            $faker = \Faker\Factory::create();
-            $avataaar = new \Avataaar\Avataaar();
-            $faker->addProvider(new \Avataaar\FakerProvider($faker));
-            if(empty($user->getImage())) 
-            {
-               $user->setImage($faker->avataaar); 
-            }
-            //!======================
+        // to add random avatar with 
+        $faker = \Faker\Factory::create();
+        $avataaar = new \Avataaar\Avataaar();
+        $faker->addProvider(new \Avataaar\FakerProvider($faker));
+        if(empty($user->getImage())) 
+        {
+            $user->setImage($faker->avataaar); 
+        }
 
-            $em->persist($user);
-            $em->flush();
+        $userRepo->add($user, true);
 
         return $this->json([$user->getId(), $user->getEmail()], Response::HTTP_CREATED);
     }
@@ -81,22 +75,19 @@ class UserController extends AbstractController
     /**
      * @Route("/users", name="read", methods={"GET"})
      */
-
     public function read(Security $security): Response
     {
-        // $user = $userRepo->find($id);
         $user = $security->getUser();
         return $this->json($user, 200, [], ['groups' => 'api_user_read']);
     }
 
-     /**
+    /**
      * @Route("/users", name="update", methods="PATCH")
      * @return Response
      */
     public function update(
         Security $security,
-        EntityManagerInterface $em, 
-        UserRepository $userRepository,
+        UserRepository $userRepo,
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator
@@ -111,7 +102,7 @@ class UserController extends AbstractController
             }
         }
 
-        if ($user === null )
+        if (!$user)
         {
             $errors = [ 
                 'error' => true,
@@ -134,7 +125,7 @@ class UserController extends AbstractController
             return $this->json($errorsString, Response::HTTP_BAD_REQUEST);
         }
 
-        $em->flush();
+        $userRepo->add($user, true);
 
         return $this->json('Utilisateur modifié', Response::HTTP_OK);
     }

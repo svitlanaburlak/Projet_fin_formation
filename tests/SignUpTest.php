@@ -63,7 +63,7 @@ class SignUpTest extends WebTestCase
                "email" => "test5@email.com",
                "city"=> 1 ], 
             400 ],
-            // check if user won't be registered without password
+            // check if user won't be registered without city
             [ ["firstname" => "firstname",
                "lastname" => "lastname",
                "email" => "test6@email.com",

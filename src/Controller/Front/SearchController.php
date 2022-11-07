@@ -17,10 +17,10 @@ class SearchController extends AbstractController
     private $slugger;
     private $cityRepo;
 
-    public function __construct(SluggerInterface $slugger, CityRepository $cityRepository)
+    public function __construct(SluggerInterface $slugger, CityRepository $cityRepo)
     {
         $this->slugger = $slugger;
-        $this->cityRepo = $cityRepository;
+        $this->cityRepo = $cityRepo;
     }
 
     /**
@@ -32,7 +32,8 @@ class SearchController extends AbstractController
         $cityToSearch = $this->slugger->slug(strtolower($slug));
         $city = $this->cityRepo->findBySlug($cityToSearch);
 
-        if (empty($city))
+        //todo check !city or empty(city)
+        if (!$city)
         {
             // if city is not found, we return 404
             return $this->json('No city found with name ' . $slug, Response::HTTP_NOT_FOUND);

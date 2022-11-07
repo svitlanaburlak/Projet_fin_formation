@@ -75,7 +75,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}", name="read", methods={"GET"})
+     * @Route ("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function read(City $city): Response
     {
@@ -85,7 +85,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}/update", name="update", methods={"GET", "POST"})
+     * @Route ("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function update(Request $request, City $city, CityRepository $cityRepository): Response
     {
@@ -106,7 +106,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, City $city, CityRepository $cityRepository): Response
     {
