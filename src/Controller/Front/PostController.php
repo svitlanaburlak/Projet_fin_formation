@@ -69,6 +69,7 @@ class PostController extends AbstractController
         } else {
             // if it is not "Evénements" front can send us the date of creation of the post by default.
             // checks if date in format 'Y-m-d' = CreatedAt, so it is date send from front by default.
+            // dd($post->getDate());
             if(substr($post->getDate(), 0, -10) == $post->getCreatedAt()){
                 // as it is not "Evénements", it will set Date to null
                 $post->setDate(null);
