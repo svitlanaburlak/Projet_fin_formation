@@ -8,7 +8,9 @@ use App\Repository\CityRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * @Route("/admin/cities", name="admin_city_")
@@ -29,7 +31,10 @@ class CityController extends AbstractController
     /**
      * @Route("/create", name="create", methods={"GET", "POST"})
      */
-    public function create(Request $request, CityRepository $cityRepository): Response
+    public function create(
+        Request $request, 
+        CityRepository $cityRepository, 
+        SluggerInterface $slugger): Response
     {
         $city = new City();
 
@@ -37,6 +42,26 @@ class CityController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // upload an image for a city
+            $uploadedImage = $form['image']->getData();
+                if ($uploadedImage) {
+                    $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
+                    $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
+
+                    try {
+                        $uploadedImage->move(
+                            $this->getParameter('kernel.project_dir').'/public/city_image',
+                            $newFilename
+                        );
+                    } catch (FileException $e) {
+                        // ... handle exception if something happens during file upload
+                    }
+
+                    $city->setImage('http://localhost/My_github/Projet_fin_formation/public/city_image/'. $newFilename);
+                }
+            
+            $city->setSlug($slugger->slug(strtolower($city->getName())));
             $cityRepository->add($city, true);
 
             $this->addFlash('success', 'Ville ajoutée');
@@ -50,7 +75,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}", name="read", methods={"GET"})
+     * @Route ("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function read(City $city): Response
     {
@@ -60,7 +85,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}/update", name="update", methods={"GET", "POST"})
+     * @Route ("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function update(Request $request, City $city, CityRepository $cityRepository): Response
     {
@@ -81,7 +106,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, City $city, CityRepository $cityRepository): Response
     {

@@ -6,12 +6,10 @@ use App\Repository\CityRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
-    /**
-     * @Route("/api", name="api_city_")
-     */
-
+/**
+ * @Route("/api", name="api_city_")
+ */
 class CityController extends AbstractController
 {
     /**
@@ -30,9 +28,8 @@ class CityController extends AbstractController
     {
         $city = $cityRepo->find($id); 
 
-        if ($city === null)
+        if (!$city)
         {
-            // if city is not found, we return 404
             return $this->json('No city found with id ' . $id, Response::HTTP_NOT_FOUND);
         }
 

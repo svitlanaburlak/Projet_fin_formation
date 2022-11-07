@@ -15,18 +15,17 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
-    /**
-     * @Route("/admin/users", name="admin_user_")
-     */
-
+/**
+ * @Route("/admin/users", name="admin_user_")
+ */
 class UserController extends AbstractController
 {
 
     /**
      * @Route("/create", name="create", methods={"GET", "POST"})
      */
-
     public function create(Request $request, UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository)
     {
         $user = new User();
@@ -39,7 +38,24 @@ class UserController extends AbstractController
             $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
             $user->setPassword($hashedPassword);
 
-            //! to add random avatar with 
+            $uploadedImage = $form['image']->getData();
+            if($uploadedImage) {
+                $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
+
+                try {
+                    $uploadedImage->move(
+                        $this->getParameter('kernel.project_dir').'/public/user_image', 
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $user->setImage('http://localhost/My_github/Projet_fin_formation/public/user_image/'. $newFilename);
+            }
+
+            // to add random avatar with if user didnt upload one
             $faker = \Faker\Factory::create();
             $avataaar = new \Avataaar\Avataaar();
             $faker->addProvider(new \Avataaar\FakerProvider($faker));
@@ -47,7 +63,6 @@ class UserController extends AbstractController
             {
                $user->setImage($faker->avataaar); 
             }
-            //!======================
           
             $userRepository->add($user, true);
 
@@ -62,7 +77,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="read", methods={"GET"}, requirements={"id"="\d+"})
+     * @Route("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
 
     public function read(User $user): Response
@@ -73,7 +88,7 @@ class UserController extends AbstractController
     }
 
      /**
-     * @Route("/{id}/update", name="update", methods={"GET", "POST"})
+     * @Route("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      * @return Response
      */
     public function update(Request $request, Security $security, User $user, UserPasswordHasherInterface $passwordHasher, UserRepository $userRepository)
@@ -108,7 +123,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {

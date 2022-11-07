@@ -4,7 +4,6 @@ namespace App\Controller\Front;
 
 use App\Entity\Post;
 use App\Repository\PostRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -50,7 +49,10 @@ class PostController extends AbstractController
 
         $errors = $validator->validate($post);
 
-    
+        if(empty($post->getAddress())){
+            return $this->json('L\'adresse ne peut pas être vide', Response::HTTP_BAD_REQUEST);
+        }
+
         if (count($errors) > 0) {
 
             $errorsString = (string) $errors;
@@ -60,13 +62,28 @@ class PostController extends AbstractController
         $post->setStatus(1);
         $post->setCreatedAt(new \DateTime());
         
-        //! if user doesnt provide URl for image, it will set image of the city
+        // checks if created post is of category "Evénements"(5), so it must have the date fulfilled
+        // thanks to the fact that in ArrayCollection of Category: index of the array = id of the category
+        if($post->getCategory()->containsKey(5)){
+            if(empty($post->getDate())){
+                return $this->json('L\'événement doit avoir une date', Response::HTTP_BAD_REQUEST);
+            }  
+        } else {
+            // if it is not "Evénements" front can send us the date of creation of the post by default.
+            // checks if date in format 'Y-m-d' = CreatedAt, so it is date send from front by default.
+            // dd($post->getDate());
+            if(substr($post->getDate(), 0, -10) == $post->getCreatedAt()){
+                // as it is not "Evénements", it will set Date to null
+                $post->setDate(null);
+            }
+        }
+
+        // if user doesnt provide URL for image, it will set image of the city
         $city = $post->getCity();
         if(!$post->getImage())
         {
             $post->setImage($city->getImage());
         }
-        //!========
 
         $postRepo->add($post, true);
 
@@ -74,20 +91,19 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/posts/{id<\d+>}", name="update", methods="PATCH", requirements={"id"="\d+"})
+     * @Route("/posts/{id}", name="update", methods="PATCH", requirements={"id"="\d+"})
      * @return Response
      */
     public function update(
         $id,
-        EntityManagerInterface $em, 
-        PostRepository $postRepository,
+        PostRepository $postRepo,
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator
         )
     {
 
-        $post = $postRepository->find($id);
+        $post = $postRepo->find($id);
 
         // if current user doesnt have the role of Admin or is not the author of this post, it will thrown an "acces denied"
         if ($this->getUser()->getRoles() !== ['ROLE_ADMIN']) {
@@ -120,7 +136,8 @@ class PostController extends AbstractController
         }
 
         $post->setUpdatedAt(new \DateTime());
-        $em->flush();
+
+        $postRepo->add($post, true);
 
         return $this->json('Point d\'intérêt modifié', Response::HTTP_OK);
     }

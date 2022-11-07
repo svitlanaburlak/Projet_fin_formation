@@ -44,8 +44,8 @@ class EventDateCommand extends Command
         foreach ($postList as $post) {
             
             if($post->getStatus() == 1) {
-                $io->note('Le statut du post ' . $post->getId() . ' a été changé');
                 $post->setStatus(0);
+                $io->note('Le statut du post ' . $post->getId() . ' a été changé'); 
             }
             
         }

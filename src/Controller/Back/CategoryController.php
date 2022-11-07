@@ -50,7 +50,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}", name="read", methods={"GET"})
+     * @Route ("/{id}", name="read", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function read(Category $category): Response
     {
@@ -60,7 +60,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route ("/{id<\d+>}/update", name="update", methods={"GET", "POST"})
+     * @Route ("/{id}/update", name="update", requirements={"id"="\d+"}, methods={"GET", "POST"})
      */
     public function update(Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {
@@ -81,7 +81,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id<\d+>}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", requirements={"id"="\d+"}, methods={"POST"})
      */
     public function delete(Request $request, Category $category, CategoryRepository $categoryRepository): Response
     {

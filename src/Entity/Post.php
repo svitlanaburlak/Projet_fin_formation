@@ -280,7 +280,9 @@ class Post
     public function addCategory(Category $category): self
     {
         if (!$this->category->contains($category)) {
-            $this->category[] = $category;
+            // sets category id as an index of the ArrayCollection
+            // it allows to check if certain category id is inside this ArrayCollection
+            $this->category[$category->getId()] = $category;
         }
 
         return $this;
