@@ -7,6 +7,8 @@ Quand on part pour un autre pays, il peut être difficile de retrouver une vie s
 Grâce à cette appli web, retrouvez les lieux d’intérêt de la communauté, rencontrez les français déjà installés et leurs connaissances, accueillez les nouveaux arrivants,
 Démarrez votre nouvelle vie !
 
+Vous pouvez rejoignez [Tribu](https://tribu.surge.sh/)
+
 
 ### L'équipe Front-end
 
