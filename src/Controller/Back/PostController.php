@@ -54,7 +54,7 @@ class PostController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
     
-                $post->setImage('http://localhost/My_github/Projet_fin_formation/public/post_image/'. $newFilename);
+                $post->setImage('https://www.demo-tribu.tech/public/post_image/'. $newFilename);
             }
 
             $post->setCreatedAt(new DateTime());

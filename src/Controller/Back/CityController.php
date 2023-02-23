@@ -58,7 +58,7 @@ class CityController extends AbstractController
                         // ... handle exception if something happens during file upload
                     }
 
-                    $city->setImage('http://localhost/My_github/Projet_fin_formation/public/city_image/'. $newFilename);
+                    $city->setImage('https://www.demo-tribu.tech/public/city_image/'. $newFilename);
                 }
             
             $city->setSlug($slugger->slug(strtolower($city->getName())));
