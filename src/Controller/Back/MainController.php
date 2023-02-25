@@ -22,7 +22,6 @@ class MainController extends AbstractController
 
         $postList = $postRepo->findAll();
         $postRandom = $postList[array_rand($postList)];
-
         
         return $this->render('back/main/index.html.twig', [
             'city' => $cityRandom,

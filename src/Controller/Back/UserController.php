@@ -52,7 +52,7 @@ class UserController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
 
-                $user->setImage('http://localhost/My_github/Projet_fin_formation/public/user_image/'. $newFilename);
+                $user->setImage('https://www.demo-tribu.tech/public/user_image/'. $newFilename);
             }
 
             // to add random avatar with if user didnt upload one
