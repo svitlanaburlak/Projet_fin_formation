@@ -58,7 +58,7 @@ class CityController extends AbstractController
                         // ... handle exception if something happens during file upload
                     }
 
-                    $city->setImage('https://www.demo-tribu.tech/public/city_image/'. $newFilename);
+                    $city->setImage($this->getParameter('app.baseurl').'city_image/'. $newFilename);
                 }
             
             $city->setSlug($slugger->slug(strtolower($city->getName())));
@@ -93,6 +93,27 @@ class CityController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // upload an image for a city
+            $uploadedImage = $form['image']->getData();
+                if ($uploadedImage) {
+                    $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
+                    $newFilename = $city->getSlug() . '-' . uniqid() .'.'.$uploadedImage->guessExtension();
+
+                    try {
+                        $uploadedImage->move(
+                            $this->getParameter('kernel.project_dir').'/public/city_image',
+                            $newFilename
+                        );
+                    } catch (FileException $e) {
+                        // ... handle exception if something happens during file upload
+                    }
+
+                    $city->setImage($this->getParameter('app.baseurl').'city_image/'. $newFilename);
+
+                    // $city->setImage('https://www.demo-tribu.tech/public/city_image/'. $newFilename);
+                }
+
             $cityRepository->add($city, true);
 
             $this->addFlash('warning', 'Ville modifiée');
