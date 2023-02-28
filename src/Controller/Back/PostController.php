@@ -54,7 +54,7 @@ class PostController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
     
-                $post->setImage('https://www.demo-tribu.tech/public/post_image/'. $newFilename);
+                $post->setImage($this->getParameter('app.baseurl').'post_image/'. $newFilename);
             }
 
             $post->setCreatedAt(new DateTime());
@@ -97,6 +97,24 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $uploadedImage = $form['image']->getData();
+
+            if($uploadedImage) {
+                $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
+
+                try {
+                    $uploadedImage->move(
+                        $this->getParameter('kernel.project_dir').'/public/post_image', 
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+    
+                $post->setImage($this->getParameter('app.baseurl').'post_image/'. $newFilename);
+            }
 
             $post->setUpdatedAt(new DateTime());
             $postRepo->add($post, true);

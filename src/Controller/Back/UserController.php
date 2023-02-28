@@ -39,6 +39,7 @@ class UserController extends AbstractController
             $user->setPassword($hashedPassword);
 
             $uploadedImage = $form['image']->getData();
+
             if($uploadedImage) {
                 $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
                 $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
@@ -52,7 +53,7 @@ class UserController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
 
-                $user->setImage('https://www.demo-tribu.tech/public/user_image/'. $newFilename);
+                $user->setImage($this->getParameter('app.baseurl').'user_image/'. $newFilename);
             }
 
             // to add random avatar with if user didnt upload one
@@ -61,7 +62,7 @@ class UserController extends AbstractController
             $faker->addProvider(new \Avataaar\FakerProvider($faker));
             if(empty($user->getImage())) 
             {
-               $user->setImage($faker->avataaar); 
+               $user->setImage($faker->avataaar()); 
             }
           
             $userRepository->add($user, true);
@@ -108,6 +109,23 @@ class UserController extends AbstractController
                 // si oui alors le hashé et le remplacer dans l'objet user
                 $hashedPassword = $passwordHasher->hashPassword($user, $passwordClear);
                 $user->setPassword($hashedPassword);
+            }
+
+            $uploadedImage = $form['image']->getData();
+            if($uploadedImage) {
+                $originalFilename = pathinfo($uploadedImage->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$uploadedImage->guessExtension();
+
+                try {
+                    $uploadedImage->move(
+                        $this->getParameter('kernel.project_dir').'/public/user_image', 
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $user->setImage($this->getParameter('app.baseurl').'user_image/'. $newFilename);
             }
             
             $userRepository->add($user, true);
