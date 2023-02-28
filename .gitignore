@@ -23,3 +23,7 @@ src/.DS_Store
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+
+/public/city_image/
+/public/post_image/
+/public/user_image/
