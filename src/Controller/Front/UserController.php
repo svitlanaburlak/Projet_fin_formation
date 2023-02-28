@@ -5,7 +5,7 @@ namespace App\Controller\Front;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Bundle\SecurityBundle\Security;;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -64,7 +64,7 @@ class UserController extends AbstractController
         $faker->addProvider(new \Avataaar\FakerProvider($faker));
         if(empty($user->getImage())) 
         {
-            $user->setImage($faker->avataaar); 
+            $user->setImage($faker->avataaar()); 
         }
 
         $userRepo->add($user, true);
