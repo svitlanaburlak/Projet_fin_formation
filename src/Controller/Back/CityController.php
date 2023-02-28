@@ -51,7 +51,7 @@ class CityController extends AbstractController
 
                     try {
                         $uploadedImage->move(
-                            $this->getParameter('kernel.project_dir').'/public/city_image',
+                            $this->getParameter('kernel.project_dir').'/city_image',
                             $newFilename
                         );
                     } catch (FileException $e) {
