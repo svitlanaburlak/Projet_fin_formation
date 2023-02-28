@@ -51,6 +51,8 @@ class CityController extends AbstractController
 
                     try {
                         $uploadedImage->move(
+                            // TODO doesnt work in prod (neither for city nor post nor user)
+                            // TODO Shoul add /publicbefore city_image? 
                             $this->getParameter('kernel.project_dir').'/city_image',
                             $newFilename
                         );
